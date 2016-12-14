@@ -53,9 +53,33 @@
         </a>
     {% endif %}
     
+    {% if site.gitlab %}
+        <a class="link" data-title="gitlab.com/{{ site.gitlab }}" href="https://gitlab.com/{{ site.gitlab }}" target="_blank">
+            <svg class="icon icon-github"><use xlink:href="#icon-gitlab"></use></svg>
+        </a>
+    {% endif %}
+    
     {% if site.stackoverflow %}
         <a class="link" data-title="stackoverflow.com/users/{{ site.stackoverflow }}" href="http://stackoverflow.com/users/{{ site.stackoverflow }}" target="_blank">
             <svg class="icon icon-stackoverflow"><use xlink:href="#icon-stackoverflow"></use></svg>
+        </a>
+    {% endif %}
+
+    {% if site.upwork %}
+        <a class="link" data-title="upwork.com/{{ site.upwork }}" href="https://upwork.com/{{ site.upwork }}" target="_blank">
+            <svg class="icon icon-upwork"><use xlink:href="#icon-upwork"></use></svg>
+        </a>
+    {% endif %}
+
+    {% if site.freelancer %}
+        <a class="link" data-title="freelancer.com/{{ site.freelancer }}" href="https://freelancer.com/{{ site.freelancer }}" target="_blank">
+            <svg class="icon icon-freelancer"><use xlink:href="#icon-freelancer"></use></svg>
+        </a>
+    {% endif %}
+
+    {% if site.playstore %}
+        <a class="link" data-title="https://play.google.com/store/apps/developer?id={{ site.playstore }}" href="https://play.google.com/store/apps/developer?id={{ site.playstore }}" target="_blank">
+            <svg class="icon icon-playstore"><use xlink:href="#icon-playstore"></use></svg>
         </a>
     {% endif %}
 

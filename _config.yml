@@ -1,6 +1,6 @@
 # main text of home
-name: John Doe
-bio: A Man who travels the world eating noodles
+name: Zuhaib Ahmad
+bio: Lifelong Learner | Technologist | App Developer | Sci-Fi Junkie | Ambivert | Football Freak | Gamer
 
 # twitter summary info
 description: A blog about technology and stuff related
@@ -10,13 +10,14 @@ description: A blog about technology and stuff related
 external-image: false
 picture: assets/images/profile.jpg
 
-url: https://koppl.in/indigo
+url: https://xuhaibahmad.github.io
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
 
-markdown: kramdown
-highlighter: rouge
+#markdown: kramdown
+#markdown: redcarpet
+#highlighter: pygments
 
 # To enable google analytics, supply your token below
 # analytics-google: 'UA-MYANALYTICS'
@@ -26,38 +27,36 @@ highlighter: rouge
 # analytics-piwik-id: 1
 
 # if you don't want comments in your posts, set to false
-disqus: mydisqus
+disqus: zuhaibahmad
 
 # if you don't have any of social below, comment the line
-facebook: myfacebook
-twitter: mytwitter
-# google: mygoogle
+facebook: iamzuhaibahmad
+twitter: XuhaibAhmad
+#google: 113238129082350930587
 # instagram: myinstagram
 # pinterest: mypinterest
-# linkedin: mylinkedin
-youtube: myyoutube
-spotify: myspotify
-github: mygithub
-stackoverflow: 7044681/mystackoverflow
-quora: userquora
-reddit: username
-medium: medium
-vimeo: myvimeo
-email: myemail@gmail.com
+linkedin: xuhaibahmad
+# youtube: myyoutube
+# spotify: myspotify
+gitlab: zuhaib
+github: xuhaibahmad
+upwork: o/profiles/users/_~016f2f0c0d91a8f27e
+freelancer: u/zuhaibahmad.html
+playstore: Appstravaganza
+stackoverflow: 2444874/zuhaib-ahmad
+quora: Zuhaib-Ahmad-8
+# reddit: username
+# medium: medium
+# vimeo: myvimeo
+email: mail@zuhaibahmad.com
 
 authors:
-    johndoe:
-        name: John Doe
-        bio: A Man who travels the world eating noodles
+    zuhaibahmad:
+        name: Zuhaib Ahmad
+        bio: Lifelong Learner | Technologist | App Developer | Sci-Fi Junkie | Ambivert | Football Freak | Gamer
         external-image: false
         picture: assets/images/profile.jpg
-        twitter: johndoe
-    jamesfoster:
-        name: James Foster
-        bio: A Man who develops software with coffee
-        external-image: false
-        picture: assets/images/james.jpg
-        twitter: jamesfoster
+        twitter: iamzuhaibahmad
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
@@ -72,7 +71,7 @@ width: normal
 projects: true
 
 # if you don't need "about" or "blog", comment them out below
-about: false
+about: true
 blog: true
 
 # do you want to show the "read time" of the posts?
@@ -82,7 +81,7 @@ read-time: true
 show-tags: true
 
 # related posts inside a post?
-related: true
+related: false
 
 # show next & prev links in blog post?
 blog-nav-links: false

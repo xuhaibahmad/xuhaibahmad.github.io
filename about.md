@@ -2,45 +2,46 @@
 title: About
 layout: page
 ---
-![Profile Image]({{ site.url }}/{{ site.picture }})
+<!-- ![Profile Image]({{ site.url }}/{{ site.picture }}) -->
+<!-- ![Site Logo](https://xuhaibahmad.github.io/assets/images/Logo.png?raw=true "Title") -->
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p><b>M</b>y interest in mobile application development stemmed from my passion 
+for game development. Between developing mobile apps and playing video games, I 
+admittedly spend most of my time in front of a screen. Some of my passions are 
+learning new technologies, watching sci-fi movies, reading books, writing clean 
+code, creating productive apps and filling up a fresh cup of coffee.</p>
+ 
+<p>I am a passionate and curiosity-driven Computer Science undergraduate having 
+more than 2 years’ hands-on experience of freelance software development. I like 
+building software that adds value to people's lives. Be it a mobile application 
+helping them finding their best deals in town or a video game providing some 
+quality entertainment after a hard day. It brings real satisfaction knowing that 
+a piece of software that I "invented" made someone's life easier in some way.</p>
+ 
+<p>I devoted last 3 years of my life learning and working on professional projects 
+as a freelance developer with most of the widely used technologies. Currently, 
+looking forward to a career in the field of information technology as Mobile 
+Application and/or Software Developer in an innovative Learning-Organization.</p>
+ 
+<p>My fields of interest include Android Application Development and Unity3D Game 
+Development. After having more than 10 successful projects on the freelance market, 
+Play Store and a long-running partnership with an International Startup; currently 
+seeking experience and reputation in the discipline with new ideas in contemplation. 
+Moreover, exploring opportunities for Social Entrepreneurship.</p>
 
 <h2>Skills</h2>
 
 <ul class="skill-list">
-	<li>HTML - Jade - Haml - Erb</li>
-	<li>Responsive (Mobile First)</li>
-	<li>CSS (Stylus, Sass, Less)</li>
-	<li>Css Frameworks (Bootstrap, Foundation)</li>
-	<li>Javascript (Design Patterns, Testes)</li>
-	<li>NodeJS</li>
-	<li>AngularJS - ReactJS</li>
-	<li>Grunt - Gulp - Yeoman</li>
-	<li>Git</li>
-	<li>PHP</li>
-	<li>Python</li>
+	<li>Android</li>
+	<li>Java</li>
+	<li>Unity 3D</li>
+	<li>Slim PHP Framwork</li>
+	<li>RESTful Webservices</li>
+	<li>SDK Integration (Admob, Stripe, Appodeal, Paypal, etc)</li>
+	<li>MBaaS Solutions (Firebase, Parse, Backendless, etc)</li>
+	<li>Google APIs (Maps, LBS, Analytics, OAuth, etc)</li>
+	<li>VCS (Git, SVN)</li>
 	<li>MySQL - MongoDB</li>
 	<li>Scrum and Kanban</li>
 	<li>TDD e Continuous Integration</li>
-</ul>
-
-<h2>Projects</h2>
-
-<ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
 </ul>
