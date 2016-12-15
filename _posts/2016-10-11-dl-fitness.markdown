@@ -18,7 +18,7 @@ author: johndoe
 externalLink: false
 ---
 
-![Screenshot](/assets/images/portfolio/dl_fitness.png)
+![Screenshot](/assets/images/portfolio/dl_fitness.png){: .center-image }
 
 DL Fitness is app for a Spanish Fitness Club which let's users maintain their profile and take full advantage of their membership. 
 
