@@ -3,9 +3,9 @@ title: "Rummy Card Game"
 layout: post
 date: 2015-03-02 15:28
 tag: 
-- android
-- game development
-- java
+- Android
+- Game Development
+- Java
 image: /assets/images/portfolio/icons/default.png
 headerImage: true
 projects: true

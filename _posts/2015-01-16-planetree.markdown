@@ -3,8 +3,8 @@ title: "PlaneTree"
 layout: post
 date: 2015-01-16 15:56
 tag: 
-- android
-- java
+- Android
+- Java
 - OpenCV
 - Image Recognition
 image: /assets/images/portfolio/icons/planetree.png
@@ -26,4 +26,4 @@ The app can also identify the kind of tree (limited to white Lauan, Narra and Gm
 
 Find [Project Reference](https://www.upwork.com/jobs/~010d33870190a10b78) here.<br />
 Check out the [GitLab repo](https://gitlab.com/open-code/PlaneTree) for the project.<br />
-If you need any help, just [contact me](http://linkedin.com/in/xuhaibahmad).
+For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad).
