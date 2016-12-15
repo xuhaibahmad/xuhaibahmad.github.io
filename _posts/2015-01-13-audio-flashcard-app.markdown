@@ -15,7 +15,9 @@ author: johndoe
 externalLink: false
 ---
 
-<p>![Screenshot](/assets/images/portfolio/audio_flashcard.png)</p>
+{:refdef: style="text-align: center;"}
+![Screenshot](/assets/images/portfolio/audio_flashcard.png)
+{: refdef}
 
 The client wanted a flash card application that let's user record the reminders in the form of Audio with a Description, Category, Tag and Importance Rating for it. 
 

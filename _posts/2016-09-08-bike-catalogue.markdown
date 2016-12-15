@@ -18,7 +18,9 @@ author: johndoe
 externalLink: false
 ---
 
-<p>![Screenshot](/assets/images/portfolio/bike.png)</p>
+{:refdef: style="text-align: center;"}
+![Screenshot](/assets/images/portfolio/bike.png)
+{: refdef}
 
 App is a simple image feed client dedicated Sport Bikes. The main functionality of app is to fetch image feed from Flicker API and display it in 3 separate categories.
 
