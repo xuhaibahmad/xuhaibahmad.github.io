@@ -13,7 +13,7 @@ headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination
 description: "App for Spanish Fitness Gym."
-jemoji: '<img class="emoji" title="planetree" alt="planetree" src="/assets/images/portfolio/icons/dl_fitness.png" height="20" width="20" align="absmiddle">'
+jemoji: '<img class="emoji" title="dl_fitness" alt="dl_fitness" src="/assets/images/portfolio/icons/dl_fitness.png" height="20" width="20" align="absmiddle">'
 author: johndoe
 externalLink: false
 ---

@@ -11,7 +11,7 @@ headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination
 description: "Rummy card game project done in initial days of freelancing at Upwork."
-jemoji: '<img class="emoji" title="planetree" alt="planetree" src="/assets/images/portfolio/icons/default.png" height="20" width="20" align="absmiddle">'
+jemoji: '<img class="emoji" title="rummy" alt="rummy" src="/assets/images/portfolio/icons/default.png" height="20" width="20" align="absmiddle">'
 author: johndoe
 externalLink: false
 ---
