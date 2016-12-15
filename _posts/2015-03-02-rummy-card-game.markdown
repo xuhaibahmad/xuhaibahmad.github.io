@@ -22,5 +22,5 @@ The initial task was to work on specific functions of the game which eventually 
 
 ---
 
-Find [Project Reference](https://www.upwork.com/jobs/~01e69fd408f04ef5fd) here.__
-For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad).__
+Find [Project Reference](https://www.upwork.com/jobs/~01e69fd408f04ef5fd) here.<br />
+For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad).
