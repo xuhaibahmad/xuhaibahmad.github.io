@@ -6,6 +6,7 @@ tag:
 - Android
 - Java
 - REST
+- Parse
 - SQLite
 - Photoshop
 - Illustrator
