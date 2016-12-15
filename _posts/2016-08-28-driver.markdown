@@ -1,0 +1,30 @@
+---
+title: "Driver"
+layout: post
+date: 2016-08-28 22:24
+tag: 
+- Android
+- Java
+- REST
+- SQLite
+- Photoshop
+- Illustrator
+image: /assets/images/portfolio/icons/vease.png
+headerImage: true
+projects: true
+hidden: true # don't count this post in blog pagination
+description: "Driver Logistics App"
+jemoji: '<img class="emoji" title="driver" alt="driver" src="/assets/images/portfolio/icons/driver.png" height="20" width="20" align="absmiddle">'
+author: johndoe
+externalLink: false
+---
+
+{:refdef: style="text-align: center;"}
+![Screenshot](/assets/images/portfolio/driver.png)
+{: refdef}
+
+The app is for a logistics firm that aims to improve their overall business process through the use of mobile app
+
+---
+
+For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad).
