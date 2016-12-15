@@ -24,4 +24,6 @@ The app can also identify the kind of tree (limited to white Lauan, Narra and Gm
 
 ---
 
-[Check it out](https://www.upwork.com/d/contracts/14724873) here.
+Find [Project Reference](https://www.upwork.com/d/contracts/14724873) here.
+Check out the [GitLab repo](https://gitlab.com/open-code/PlaneTree) for the project.
+If you need any help, just [contact me](mail@zuhaibahmad.com).
