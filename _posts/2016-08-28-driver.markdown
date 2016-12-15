@@ -6,10 +6,11 @@ tag:
 - Android
 - Java
 - REST
+- Firebase
 - SQLite
 - Photoshop
 - Illustrator
-image: /assets/images/portfolio/icons/vease.png
+image: /assets/images/portfolio/icons/driver.png
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination
