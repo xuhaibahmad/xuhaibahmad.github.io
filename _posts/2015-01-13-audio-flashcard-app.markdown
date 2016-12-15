@@ -15,7 +15,7 @@ author: johndoe
 externalLink: false
 ---
 
-![Screenshot](/assets/images/portfolio/audio_flashcard.png){: .center-image }
+<p>![Screenshot](/assets/images/portfolio/audio_flashcard.png)</p>
 
 The client wanted a flash card application that let's user record the reminders in the form of Audio with a Description, Category, Tag and Importance Rating for it. 
 

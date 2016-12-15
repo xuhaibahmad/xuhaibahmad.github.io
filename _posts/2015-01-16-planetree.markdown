@@ -17,7 +17,7 @@ author: johndoe
 externalLink: false
 ---
 
-![Screenshot](/assets/images/portfolio/planetree.png)
+<p>![Screenshot](/assets/images/portfolio/planetree.png)</p>
 
 The application is an Android-based Age Determination of a Tree. Using the method of the tree aging formula and OpenCV, the mobile application provides real-time physical measurement of a tree such as the height and width as well as the distance of the tree from the user, which will then be used in the calculation to get the estimated age of a specific tree. 
 The app can also identify the kind of tree (limited to white Lauan, Narra and Gmelina only) by capturing the leaf (using contour detection).
