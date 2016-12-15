@@ -8,7 +8,7 @@ tag:
 - REST
 - PHP
 - MySQL
-image: /assets/images/portfolio/icons/dafault.png
+image: /assets/images/portfolio/icons/default.png
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination
