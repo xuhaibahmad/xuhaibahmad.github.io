@@ -10,7 +10,7 @@ layout: page
  
 <p>I am a passionate and curiosity-driven Computer Science graduate having more than 3 years’ hands-on experience of freelance software development. I like building software that adds value to people's lives. Be it a mobile application helping them finding their best deals in town or a video game providing some quality entertainment after an exhausting day. It brings real satisfaction knowing that a piece of software that I "invented" made someone's life better in some way.</p>
  
-<p>After devoting last 4 years learning and working on professional projects as a freelance developer with most of the widely used technologies. After having several successful projects on the freelance market, Play Store and a long-running partnership with an International Startup; currently seeking experience and reputation in the discipline with new ideas in contemplation. Moreover, exploring opportunities for Social Entrepreneurship.</p>
+<p>After devoting last 4 years learning and working on professional projects as a freelance developer with most of the widely used technologies, having several successful projects on the freelance market, Play Store and a long-running partnership with an International Startup; currently seeking experience and reputation in the discipline with new ideas in contemplation. Moreover, exploring opportunities for Social Entrepreneurship.</p>
 
 <h2>Skills</h2>
 

@@ -9,6 +9,7 @@ tag:
 - components
 - extra
 blog: true
+draft: true
 author: jamesfoster
 description: Markdown summary with different options
 ---

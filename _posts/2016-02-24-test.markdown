@@ -8,6 +8,7 @@ tag:
 - markdown
 - elements
 blog: true
+draft: true
 star: true
 author: Zuhaib AHmad
 description: Simple test blog post
