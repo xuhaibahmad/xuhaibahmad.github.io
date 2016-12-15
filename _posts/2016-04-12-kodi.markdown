@@ -1,0 +1,37 @@
+---
+title: "Load My Android (Kodi TV App)"
+layout: post
+date: 2016-04-12 20:41
+tag: 
+- Android
+- Java
+- REST
+- PHP
+- MySQL
+- KODI
+image: /assets/images/portfolio/icons/default.png
+headerImage: true
+projects: true
+hidden: true # don't count this post in blog pagination
+description: "Incomplete term project."
+jemoji: '<img class="emoji" title="kodi" alt="kodi" src="/assets/images/portfolio/icons/default.png" height="20" width="20" align="absmiddle">'
+author: johndoe
+externalLink: false
+---
+
+{:refdef: style="text-align: center;"}
+![Screenshot](/assets/images/portfolio/kodi_0.png)
+{: refdef}
+
+Load My Android is a companion app for Kodi Open Source Home Theater Software that let's user set up application and it's data on their device. The app is mainly targetted for Android powered Smart TVs
+
+{:refdef: style="text-align: center;"}
+![Screenshot](/assets/images/portfolio/kodi_1.png)
+{: refdef}
+
+My role in the project also included writing REST API for the app using SLIM PHP framework which is then used by the app to download all the data and automatically set up entire tv system. 
+
+---
+
+Find [Project Reference](https://www.upwork.com/leaving?ref=https://www.freelancer.com/projects/9986120.html) here.<br />
+For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad).
