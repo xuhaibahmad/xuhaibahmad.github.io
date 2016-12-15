@@ -1,38 +1,44 @@
 ---
-title: "ExamRobot"
+title: "Fleet Management System"
 layout: post
-date: 2015-05-03 19:50
+date: 2016-12-10 21:30
 tag: 
 - Android
 - Java
 - REST
 - PHP
 - MySQL
-image: /assets/images/portfolio/icons/exam_robot.png
+- Google Maps API
+image: /assets/images/portfolio/icons/fms.png
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination
-description: "Flashcard Application."
-jemoji: '<img class="emoji" title="exam_robot" alt="exam_robot" src="/assets/images/portfolio/icons/exam_robot.png" height="20" width="20" align="absmiddle">'
+description: "Fleet Management System."
+jemoji: '<img class="emoji" title="fms" alt="fms" src="/assets/images/portfolio/icons/fms.png" height="20" width="20" align="absmiddle">'
 author: johndoe
 externalLink: false
 ---
 
 {:refdef: style="text-align: center;"}
-![Screenshot](/assets/images/portfolio/exam_robot.png)
+![Screenshot](/assets/images/portfolio/fms.png)
 {: refdef}
 
-ExamRobot Mobile app is a complimentary tool of Examrobot Desktop app and Examrobot.com website. The ExamRobot Mobile app helps to browse all the notes and the questions created by the user and also that are shared by friend groups or study circle.
+The application is an Android version of a larger Fleet Management System build for a Malaysian logistics firm that is focused on tracking all the vehicles owned by the firm using Cloud data and Location Based Services. The project also included building and deployment of J2EE Webservice on Amazon Server.
 
-The Mobile app synchronizes and fetches all the work of preparing the notes on your desktop to the mobile app allowing you to practice on the fly anytime, anywhere so that you can memorize and practice until it becomes part of your deep memory.
+Features include:
 
-- Two different modes of browsing notes and the questions:
-- Listing mode: Lists all your notes
-- Flashcard Mode: Question and answer in flashcard mode
-- Filter Notes and the questions by Tag or date
+- Vehicle Tracking through Cloud connectivity.
+- Nearest vehicle search using Cloud and Google LBS.
+- Full access to each vehicle's info such as Fuel Level, Position, Engine Condition, Battery State, GPS State, Nearest Point of Interest, Speed, Heading Direction etc.
+- Secure login system that leverages device's MAC address for Authorization.
+- Listings of Vehicles and Employees that are being managed by the current user.
+- Access to each Employee's Details.
+- Access to each Vehicle and it's Driver's details that is under supervision of current user.
+- Several utility features such as following a particular vehicle on the map, tracking specific vehicles and more.
+- Vehicle History Playback feature to track the route and technical details of a vehicle within a particular time period with the help of realtime playback.
+- Tyre Management System
 
 ---
 
-Find [Project Reference](https://www.freelancer.com/projects/Mobile-Phone-Android/Write-Android-application.6991860/) here.<br />
-Check out the [GitLab repo](https://gitlab.com/open-code/ExamRobot) for the project.<br />
+Find [Project Reference](https://www.upwork.com/jobs/~01f34ea9b4fafb3df0) here.<br />
 For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad).
