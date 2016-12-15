@@ -6,33 +6,19 @@ tag:
 - android
 - game development
 - java
-image: /assets/images/portfolio/rummy.jpg
+image: /assets/images/Logo.png
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination
-description: "This is a simple and minimalist template for Jekyll for those who likes to eat noodles."
-jemoji: '<img class="emoji" title=":ramen:" alt=":ramen:" src="https://assets.github.com/images/icons/emoji/unicode/1f35c.png" height="20" width="20" align="absmiddle">'
+description: "Rummy card game project done in initial days of freelancing at Upwork."
 author: johndoe
 externalLink: false
 ---
 
-![Screenshot](https://raw.githubusercontent.com/sergiokopplin/indigo/gh-pages/assets/screen-shot.png)
+![Screenshot](/assets/images/portfolio/rummy.jpg)
 
-Example of project - Indigo Minimalist Jekyll Template - [Demo](http://sergiokopplin.github.io/indigo/). This is a simple and minimalist template for Jekyll for those who likes to eat noodles.
-
----
-
-What has inside?
-
-- Gulp
-- BrowserSync
-- Stylus
-- SVG
-- Travis
-- No JS
-- [98/100](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fsergiokopplin.github.io%2Findigo%2F)
+The initial task was to work on specific functions of the game which eventually shifted towards creating the game from scratch. The game was traditional Gin Rummy consisting of two Players on the same device (as per client's requirements) with few special features such as automatic detection of Run or Set and deduction of those cards from user's hand.
 
 ---
 
-[Check it out](http://sergiokopplin.github.io/indigo/) here.
-If you need some help, just [tell me](http://github.com/sergiokopplin/indigo/issues).
+[Check it out](https://www.upwork.com/d/contracts/14768706) here.
