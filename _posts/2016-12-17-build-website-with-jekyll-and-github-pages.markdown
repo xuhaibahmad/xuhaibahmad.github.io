@@ -182,7 +182,7 @@ Once again commit and push your changes and open your browser to see the changes
 
 At this point, you're all set to start customizing and publishing your content, but isn't it tedious to commit and push every time to preview even the slightest of changes?
 
-> **Confession:** I had to push the code over 200 times while customizing my site without knowing there's an easy way. Make sure you don't do something as silly as that.
+> **Confession:** I had to push the code over 50 times while customizing my site without knowing there's an easy way. Make sure you don't do something as silly as that.
 
 Well good news is that you can set up a local version of your Jekyll GitHub Pages site to test changes to your site locally. It is highly recommended by GitHub to install Jekyll in order to preview your site and troubleshoot failed Jekyll builds.
 
