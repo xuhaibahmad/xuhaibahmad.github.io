@@ -176,7 +176,7 @@ sections:
 
 Once again commit and push your changes and open your browser to see the changes. That's it! You have your own website up and running totally free of cost. You can continue customizing your theme or learn about writing posts on Jekyll's [official documentation](https://jekyllrb.com/docs/posts/){:target="_blank"}.
 
----
+<div class="breaker"></div>
 
 ## (Optional) Configuring Jekyll For Local Testing
 
@@ -240,7 +240,7 @@ bundle exec jekyll serve
 
 * Preview your local Jekyll site in your web browser at *<span class="evidence">http://localhost:4000</span>*.
 
----
+<div class="breaker"></div>
 
 ## (Optional) Redirect Your Custom Domain To Your Jekyll Site
 
