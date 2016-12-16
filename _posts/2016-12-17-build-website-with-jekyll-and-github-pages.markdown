@@ -246,7 +246,7 @@ bundle exec jekyll serve
 
 If you own a custom domain (say `yourusername.com`) then you can redirect this existing domain to your GitHub Pages website so it replaces the yourusername.github.io address with this more personal one.
 
-* First of all create a new file named *<span class="evidence">CNAME</span>* (without any spaces or extension)
+* First of all create a new file named *<span class="evidence">CNAME</span>* (all caps, without any spaces or extension)
 * Open this file in a text editor of your choice and add your domain name. e.g.
 
 {% highlight raw %}
