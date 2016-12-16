@@ -1,19 +1,18 @@
 ---
-title: "Fleet Management System"
+title: "Exam Robot"
 layout: post
-date: 2016-12-10 21:30
+date: 2015-05-03 21:30
 tag: 
 - Android
 - Java
 - REST
 - PHP
 - MySQL
-- Google Maps API
 image: /assets/images/portfolio/icons/exam_robot.png
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination
-description: "Fleet Management System."
+description: "Exam Robot"
 jemoji: '<img class="emoji" title="exam_robot" alt="exam_robot" src="/assets/images/portfolio/icons/exam_robot.png" height="20" width="20" align="absmiddle">'
 author: johndoe
 externalLink: false
@@ -34,5 +33,5 @@ The Mobile app synchronizes and fetches all the work of preparing the notes on y
 
 ---
 
-Find [Project Reference](https://www.upwork.com/jobs/~01f34ea9b4fafb3df0) here.<br />
+Find [Project Reference](https://www.freelancer.com/projects/Mobile-Phone-Android/Write-Android-application.6991860/) here.<br />
 For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad).
