@@ -1,17 +1,19 @@
 ---
-title: "Test File"
+title: "Build Your Personal Website with Jekyll & GitHub Pages"
 layout: post
-date: 2016-02-24 22:44
-image: /assets/images/markdown.jpg
+date: 2016-12-17 22:44
+image: /assets/images/Logo.jpg
 headerImage: false
 tag:
-- markdown
-- elements
+- Website
+- GitHub Pages
+- Jekyll
+- Blog
 blog: true
 draft: true
 star: true
 author: Zuhaib AHmad
-description: Simple test blog post
+description: Build Your Personal Website with Jekyll & GitHub Pages
 ---
 
 ## Summary:
