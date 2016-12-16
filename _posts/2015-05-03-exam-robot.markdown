@@ -27,8 +27,8 @@ ExamRobot Mobile app is a complimentary tool of Examrobot Desktop app and Examro
 The Mobile app synchronizes and fetches all the work of preparing the notes on your desktop to the mobile app allowing you to practice on the fly anytime, anywhere so that you can memorize and practice until it becomes part of your deep memory.
 
 1. Two different modes of browsing notes and the questions:
-	a. Listing mode: Lists all your notes
-	b. Flashcard Mode: Question and answer in flashcard mode
+	* Listing mode: Lists all your notes
+	* Flashcard Mode: Question and answer in flashcard mode
 2. Filter Notes and the questions by Tag or date
 
 ---

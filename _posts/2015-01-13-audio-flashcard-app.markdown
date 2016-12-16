@@ -24,8 +24,9 @@ The client wanted a flash card application that let's user record the reminders 
 The application was built on native android platform using SQLite Database for data storage. MediaPlayer and AudioRecorder libraries were used to record and play media files.
 
 Other features of application were:
+
 - A MediaPlayer to play list of Memos sequentially.
-- Option to select the amount of representations required for Player
+- Option to select the amount of representations required for Player.
 - Search items by Imporatance, Description or Tag.
 
 ---
