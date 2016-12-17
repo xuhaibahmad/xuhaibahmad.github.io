@@ -43,7 +43,7 @@ Android community is enormous and they keep improving the eco-system with latest
 
 > `findViewById()` <br/> `setOnClickListener(this)` <br/>
 
-How many times do you have to write this code in a single project? A year ago, a single `Activity` (with a complex UI) in one of my projects had about 150 lines of only this code (along with some default value settings). Out of embarrassment, I decided to move this code into it's own method `setComponents()` to make it look.. well.. ***less embarrassing*** \*cough\*
+How many times do you have to write this code in a single project? A year ago, a single `Activity` (with a complex UI) in one of my projects had about 150 lines of only this code (along with some default value settings). Out of embarrassment, I decided to move this code out from `onCreate` method to into it's own method `setComponents()` and hide it somewhere near the end of the class. Why? to make it look.. well.. *less embarrassing* \*cough\*
 
 Few months back, I got to work on that project again. First of all, I took a fair share of time to laugh at that mess. I ended up replacing most of the UI related boilerplate with [ButterKnife](http://jakewharton.github.io/butterknife/){:target="_blank"} and the code count of that particular `Activity` came down to somewhere around 900 from 1700+. Image what affect this small changed made to the entire project. 
 
@@ -191,7 +191,7 @@ public String getBirthMonthText(LocalDate dateOfBirth) {
 
 ## ActiveAndroid
 
-One of the most painful tasks in Android development is `Database` creation. With all the `Keys`, `Tables`, `Cursors`, `Helper` and what not, it usually takes an package full of classes to be able to produce even the most simplest Databases. Android. ActiveAndroid takes care of all the setup and messy stuff, and all with just a few simple steps of configuration.
+One of the most painful tasks in Android development is setting up an `SQLite` `Database`. With all the `Keys`, `Tables`, `Cursors`, `Helper` and what not, it usually takes an entire package full of classes (filled with boilerplate code for the most part) to be able to produce even the most simplest Databases. ActiveAndroid takes care of all the setup and messy stuff, and all with just a few simple steps of configuration.
 
 > So what exactly is ActiveAndroid?
 
@@ -203,10 +203,10 @@ Add the following dependency in your *<span class="evidence">app/build.gradle</s
 
 {% highlight gradle %}
 repositories {
-    mavenCentral()
-    maven { 
-      url "https://oss.sonatype.org/content/repositories/snapshots/" 
-    }
+  mavenCentral()
+  maven { 
+    url "https://oss.sonatype.org/content/repositories/snapshots/" 
+  }
 }
 
 compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
@@ -221,8 +221,10 @@ Next, configure your project by adding some global settings in your *<span class
 
         ...
 
+        <!--Database name-->
         <meta-data android:name="AA_DB_NAME" 
           android:value="Pickrand.db" />
+        <!--Database version (default should be 1)-->
         <meta-data android:name="AA_DB_VERSION" 
           android:value="5" />
 
@@ -230,7 +232,9 @@ Next, configure your project by adding some global settings in your *<span class
 </manifest>
 {% endhighlight %}
 
-Notice also that the application name points to the ActiveAndroid application class. If you are using a custom `Application` class, just extend com.activeandroid.app.Application instead of android.app.Application. Even if you are already extending `Application` class from another library, you can initialize ActiveAndroid in it's `onCreate` method:
+Notice also that the application name points to the ActiveAndroid application class. If you are using a custom `Application` class, just extend com.activeandroid.app.Application instead of android.app.Application. 
+
+Even if you are already extending `Application` class from another library, you can initialize ActiveAndroid in it's `onCreate` method:
 
 {% highlight java %}
 public class MyApplication extends SomeLibraryApplication {
@@ -242,7 +246,7 @@ public class MyApplication extends SomeLibraryApplication {
 }
 {% endhighlight %}
 
-ActiveAndroid is a very powerful library, and thus it's setup process is longer than others we have seen so far. You might run into few issues in your first attempt. For troubleshooting and guides, go to the official [documentation](activeandroid.com){:target="_blank"}.
+ActiveAndroid is a very powerful library, and thus it's setup process takes a bit longer than others we have seen so far. You might run into few issues in your first attempt as well. For troubleshooting and guides, go to the official [documentation](activeandroid.com){:target="_blank"}.
 
 ### Usage
 

@@ -31,10 +31,38 @@ In the first part of this post, we learnt about ButterKnife, SDP, Joda Time, Act
 
 ## Volley
 
+### Setup
+
+### Usage
+
 ## Retrofit
+
+### Setup
+
+### Usage
 
 ## Parceler
 
+### Setup
+
+### Usage
+
 ## Android Annotations
 
+### Setup
+
+### Usage
+
 ## Espresso
+
+### Setup
+
+### Usage
+
+---
+
+
+
+---
+
+*<sub>Most of the example code and definitions were adopted from official sources to avoid any errors.</sub>*
