@@ -1,7 +1,7 @@
 ---
 title: "Build Your Personal Websites with Jekyll & GitHub Pages"
 layout: post
-date: 2016-12-17 02:04
+date: 2016-12-12 02:04
 image: /assets/images/posts/jekyll_and_github.png
 headerImage: true
 tag:
