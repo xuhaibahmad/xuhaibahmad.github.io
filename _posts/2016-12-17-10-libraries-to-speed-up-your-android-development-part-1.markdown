@@ -27,7 +27,7 @@ From `findViewById()` to writing `Adapters` and `Interfaces` for different types
 
 Now if you apply this theory to Android development, this makes a big difference. What if you were able to remove even half of the boilerplate code from your projects? You might be able to achieve 2x development speed to say the least. 
 
-Android community is enormous and they keep improving the eco-system with latest libraries and methodologies. There are actually plenty of libraries already written to boost the development speed. In this post, we'll discuss my list of 10 *must have* libraries that can boost your Android development.
+Android community is enormous and they keep improving the eco-system with latest libraries and methodologies. There are actually plenty of libraries already written to boost the development speed. In this post, we will discuss my list of 10 *must have* libraries that can boost your Android development.
 
 ---
 
@@ -43,11 +43,11 @@ Android community is enormous and they keep improving the eco-system with latest
 
 > `findViewById()` <br/> `setOnClickListener(this)` <br/>
 
-How many times do you have to write this code in a single project? A year ago, a single `Activity` (with a complex UI) in one of my projects had about 150 lines of only this code (along with some default value settings). Out of embarrassment, I decided to move this code out from `onCreate` method to into it's own method `setComponents()` and hide it somewhere near the end of the class. Why? to make it look.. well.. *less embarrassing* \*cough\*
+How many times do you have to write this code in a single project? A year ago, a single `Activity` (with a complex UI) in one of my projects had about 150 lines of only this code (along with some default value settings). Out of embarrassment, I decided to move this code out from `onCreate` method to into its own method `setComponents()` and hide it somewhere near the end of the class. Why? to make it look.. well.. *less embarrassing* \*cough\*
 
 Few months back, I got to work on that project again. First of all, I took a fair share of time to laugh at that mess. I ended up replacing most of the UI related boilerplate with [ButterKnife](http://jakewharton.github.io/butterknife/){:target="_blank"} and the code count of that particular `Activity` came down to somewhere around 900 from 1700+. Image what affect this small changed made to the entire project. 
 
-**Butterknife** is a View Injection library that uses `annotations` to automatically generate common boilerplate code and that too in it's own auto-generated classes. This not only saves you a lot of time but also makes your code cleaner and concise. 
+**Butterknife** is a View Injection library that uses `annotations` to automatically generate common boilerplate code and that too in its own auto-generated classes. This not only saves you a lot of time but also makes your code cleaner and concise. 
 
 ### Setup
 
@@ -118,7 +118,7 @@ class ExampleActivity extends Activity {
 
 This is just the tip of an iceberg, there is a lot more to this library. To learn more, head over to the library's page on creator @JakeWharton 's website.
 
-> **BONUS:** There's even an `Android Studio` plug-in for `Butterknife` called [ButterKnifeZelezny](https://github.com/avast/android-butterknife-zelezny){:target="_blank"}, it automates the binding process with a few clicks, making things lightning fast!
+> **BONUS:** There is even an `Android Studio` plug-in for `Butterknife` called [ButterKnifeZelezny](https://github.com/avast/android-butterknife-zelezny){:target="_blank"}, it automates the binding process with a few clicks, making things lightning fast!
 
 ## SDP
 
@@ -152,7 +152,7 @@ To learn more about usage and sample layout, go the project's [GitHub repository
 
 ## Joda Time
 
-Almost every project require some level of `date` and `time` manipulation. The standard date and time classes prior to `Java SE 8` are poorly written and broken to some extent. [Joda-Time](http://www.joda.org/joda-time/){:target="_blank"} became the de facto standard date and time library for Java due to it's extra ordinary capabilities. The design allows for multiple calendar systems *(such as Gregorian, Julian, Buddhist, Coptic, Ethiopic and Islamic calendar systems)*, while still providing a simple API. There's a lot more to it which you can find out at project's [GitHub repository](https://github.com/JodaOrg/joda-time){:target="_blank"}.
+Almost every project require some level of `date` and `time` manipulation. The standard date and time classes prior to `Java SE 8` are poorly written and broken to some extent. [Joda-Time](http://www.joda.org/joda-time/){:target="_blank"} became the de facto standard date and time library for Java due to its extra ordinary capabilities. The design allows for multiple calendar systems *(such as Gregorian, Julian, Buddhist, Coptic, Ethiopic and Islamic calendar systems)*, while still providing a simple API. There is a lot more to it which you can find out at project's [GitHub repository](https://github.com/JodaOrg/joda-time){:target="_blank"}.
 
 ### Setup
 
@@ -234,7 +234,7 @@ Next, configure your project by adding some global settings in your *<span class
 
 Notice also that the application name points to the ActiveAndroid application class. If you are using a custom `Application` class, just extend com.activeandroid.app.Application instead of android.app.Application. 
 
-Even if you are already extending `Application` class from another library, you can initialize ActiveAndroid in it's `onCreate` method:
+Even if you are already extending `Application` class from another library, you can initialize ActiveAndroid in its `onCreate` method:
 
 {% highlight java %}
 public class MyApplication extends SomeLibraryApplication {
@@ -246,7 +246,7 @@ public class MyApplication extends SomeLibraryApplication {
 }
 {% endhighlight %}
 
-ActiveAndroid is a very powerful library, and thus it's setup process takes a bit longer than others we have seen so far. You might run into few issues in your first attempt as well. For troubleshooting and guides, go to the official [documentation](activeandroid.com){:target="_blank"}.
+ActiveAndroid is a very powerful library, and thus its setup process takes a bit longer than others we have seen so far. You might run into few issues in your first attempt as well. For troubleshooting and guides, go to the official [documentation](activeandroid.com){:target="_blank"}.
 
 ### Usage
 
@@ -255,7 +255,7 @@ Usage of ActiveAndroid is a very broad topic and even a post dedicated to it wil
 ## EventBus
 
 You might be used to writing `Interfaces` for communication between your Activities and Fragments as well as different modules of your project. Now this is a pretty standard way of doing things but as your projects starts to grow, things may get out of hands.
-As a result, developers often end up with [tightly coupling](http://stackoverflow.com/questions/2832017/what-is-the-difference-between-loose-coupling-and-tight-coupling-in-object-orien){:target="_blank"} the components of their App. This results in a code that is less maintainable and hard to test. 
+As a result, developers often end up with [tightly coupling](http://stackoverflow.com/questions/2832017/what-is-the-difference-between-loose-coupling-and-tight-coupling-in-object-orien){:target="_blank"} the components of their Application. This results in a code that is less maintainable and hard to test. 
 
 [EventBus](http://greenrobot.org/eventbus/){:target="_blank"} is a popular open-source library that was created to solve this problem using the [publisher/subscriber pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern){:target="_blank"}.
 

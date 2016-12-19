@@ -23,6 +23,8 @@ layout: page
 
 {{content}}
 
+{% include advertisements.html %}
+
 {% if page.blog and site.blog-nav-links %}
     <div class="blog-navigation">
         {% if page.previous.url %}
@@ -43,8 +45,6 @@ layout: page
 {% if site.show-author %}
     {% include author.html %}
 {% endif %}
-
-{% include advertisements.html %}
 
 {% if site.disqus %}
     {% include disqus.html %}
