@@ -1,7 +1,7 @@
 ---
 title: "Speed Up Your Android Development with these 10 Libraries (Part 2)"
 layout: post
-date: 2016-12-18 02:42
+date: 2016-12-31 04:42
 image: /assets/images/posts/speed-up-android.jpg
 headerImage: true
 tag:
