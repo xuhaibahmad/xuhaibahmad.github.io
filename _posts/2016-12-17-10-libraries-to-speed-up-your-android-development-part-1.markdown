@@ -51,7 +51,7 @@ Few months back, I got to work on that project again. First of all, I took a fai
 
 ### Setup
 
-Using Gradle, add this block to *<span class="evidence">build.gradle</span>* at the project-level:
+Using Gradle, add this block to <span class="evidence">build.gradle</span> at the project-level:
 
 {% highlight gradle %}
 buildscript {
@@ -64,7 +64,7 @@ buildscript {
 }
 {% endhighlight %}
 
-And then in your *<span class="evidence">app/build.gradle</span>* file, add the following:
+And then in your <span class="evidence">app/build.gradle</span> file, add the following:
 
 {% highlight gradle %}
 apply plugin: 'android-apt'
@@ -128,7 +128,7 @@ No \# 2 on my list is a real underdog but a true life-saver! Even if you have on
 
 ### Setup
 
-Add the following dependency in your *<span class="evidence">app/build.gradle</span>* file:
+Add the following dependency in your <span class="evidence">app/build.gradle</span> file:
 
 {% highlight gradle %}
 dependencies {
@@ -156,7 +156,7 @@ Almost every project require some level of `date` and `time` manipulation. The s
 
 ### Setup
 
-Add the following dependency in your *<span class="evidence">app/build.gradle</span>* file:
+Add the following dependency in your <span class="evidence">app/build.gradle</span> file:
 
 {% highlight gradle %}
 dependencies {
@@ -199,7 +199,7 @@ ActiveAndroid is an active record style [ORM](https://en.wikipedia.org/wiki/Obje
 
 ### Setup
 
-Add the following dependency in your *<span class="evidence">app/build.gradle</span>* file:
+Add the following dependency in your <span class="evidence">app/build.gradle</span> file:
 
 {% highlight gradle %}
 repositories {
@@ -212,7 +212,7 @@ repositories {
 compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
 {% endhighlight %}
 
-Next, configure your project by adding some global settings in your *<span class="evidence">AndroidManifest.xml</span>* file:
+Next, configure your project by adding some global settings in your <span class="evidence">AndroidManifest.xml</span> file:
 
 {% highlight xml %}
 <manifest ...>
@@ -263,7 +263,7 @@ EventBus enables central communication to decoupled classes with just a few line
 
 ### Setup
 
-Add the following dependency in your *<span class="evidence">app/build.gradle</span>* file:
+Add the following dependency in your <span class="evidence">app/build.gradle</span> file:
 
 {% highlight gradle %}
 compile 'org.greenrobot:eventbus:3.0.0'
@@ -332,4 +332,4 @@ These were the first five from the list of libraries to help us speed up our And
 
 ---
 
-*<sub>Most of the example code and definitions were adopted from official sources to avoid any errors.</sub>*
+<sub>Most of the example code and definitions were adopted from official sources to avoid any errors.</sub>
