@@ -17,7 +17,7 @@ author: johndoe
 description: A very basic setup to make your Windows PC wake up by itself at a specific time, resume pending downloads and then go back to sleep at a specific time.
 ---
 
-Everyone was hyped up after Mark Zuckerberg unveiled his [AI assistant](https://www.facebook.com/zuck/videos/10103351034741311/) during the Christmas break last December. Almost everyone thought of building or at least owning something similar to [Jarvis](marvel-movies.wikia.com/wiki/J.A.R.V.I.S). I have been a fan of [AI](https://en.wikipedia.org/wiki/Artificial_intelligence) and [IoT]() for a long time now but after closely following several impressive automation projects last year such as Amazon's [Go](https://www.amazon.com/b?node=16008589011) and [Echo](https://es.wikipedia.org/wiki/Amazon_Echo), I got pretty much obsessed with the idea of machines doing stuff *for or on behalf of you* *(sounds cool right?)*
+Everyone was hyped up after Mark Zuckerberg unveiled his [AI assistant](https://www.facebook.com/zuck/videos/10103351034741311/) during the Christmas break last December. Almost everyone thought of building or at least owning something similar to [Jarvis](marvel-movies.wikia.com/wiki/J.A.R.V.I.S). I have been a fan of [AI](https://en.wikipedia.org/wiki/Artificial_intelligence) and [IoT](https://en.wikipedia.org/wiki/Internet_of_things) for a long time now but after closely following several impressive automation projects last year such as Amazon's [Go](https://www.amazon.com/b?node=16008589011) and [Echo](https://es.wikipedia.org/wiki/Amazon_Echo), I got pretty much obsessed with the idea of machines doing stuff *for or on behalf of you* *(sounds cool right?)*
 
 So this year I decided to build a small automation system for my personal use. Something simple that would not only be fun but could also help me in everyday life. For this purpose, I compiled a list of ***do-able*** tasks that can be done (or already exist) with the help of some programming. My initial plan is to write small scripts for each separate task and then integrate them into once piece of software once I have a collection. Starting with this post, I'll be going through each item on that list in the order of lowest to highest difficulty. Obviously, I might not be able to achieve everything on that list but still it's worth a try and I'll be documenting my progress in these [DevLogs](http://zuhaibahmad.com/tags/#devlog).
 
@@ -25,7 +25,7 @@ So this year I decided to build a small automation system for my personal use. S
 
 ## Problem
 
-I'm a huge fan of [Flash]() and [Arrow]() and desperately wait every week for new episodes. However, the problem is that there's no [CW TV]() (the channel that broadcasts them) in my country, so the only option left for me is via torrents. *Not a problem! Right?* ***Nope!***
+I'm a huge fan of [Flash](www.imdb.com/title/tt3107288/) and [Arrow](www.imdb.com/title/tt2193021/) and desperately wait every week for new episodes. However, the problem is that there's no [CW TV](www.cwtv.com/) (the channel that broadcasts them) in my country, so the only option left for me is via torrents. *Not a problem! Right?* ***Nope!***
 
 Then I face another problem. When you are in a place where the ***"unlimited"*** connection gives a download speed of **~200Kbps**, choosing between doing your work or putting something on download becomes a matter of trading off one thing for another. My solution (and surely for most of the people living with a shitty connection) is to put your stuff on download at night before going to bed and leave the system turned on.
 
@@ -156,6 +156,6 @@ In order to run the scheduled downloading on IDM after your system wakes up. You
 
 ## Conclusion
 
-That was it, you have successfully build your own smart download management system that too without any coding. Enjoy your sleep while your computer does the work for you while you are dreaming. Make sure your parents are aware of this or you'll be accused of using the computer all night long.
+That was it, you have successfully build your own smart download management system that too without any coding. Enjoy your sleep while your computer does the work for you while you are dreaming. Make sure your roommates know about this, else some poor souls are going to be spooked or you'll be accused of using the computer all night long.
 
 ---
