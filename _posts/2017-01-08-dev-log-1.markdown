@@ -156,6 +156,6 @@ In order to run the scheduled downloading on IDM after your system wakes up. You
 
 ## Conclusion
 
-That was it, you have successfully build your own smart download management system that too without any coding. Enjoy your sleep while your computer does the work for you while you are dreaming. Make sure your roommates know about this, else some poor souls are going to be spooked or you'll be accused of using the computer all night long.
+That was it, you have successfully build your own smart download management system that too without any coding. Enjoy your sleep while your computer does the work for you. Make sure your roommates know about this, else some poor souls are going to get spooked or you'll be accused of using the computer all night long.
 
 ---
