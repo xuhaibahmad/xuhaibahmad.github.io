@@ -1,0 +1,161 @@
+---
+title: "DevLog 01: Making A Smarter PC | Automating The Download Management"
+layout: post
+date: 2017-01-08 04:10
+image: /assets/images/devlog.png
+headerImage: true
+tag:
+- DevLog
+- Automation
+- Scheduler
+- Windows
+- Productivity
+blog: true
+draft: false
+star: true
+author: johndoe
+description: A very basic setup to make your Windows PC wake up by itself at a specific time, resume pending downloads and then go back to sleep at a specific time.
+---
+
+Everyone was hyped up after Mark Zuckerberg unveiled his [AI assistant](https://www.facebook.com/zuck/videos/10103351034741311/) during the Christmas break last December. Almost everyone thought of building or at least owning something similar to [Jarvis](marvel-movies.wikia.com/wiki/J.A.R.V.I.S). I have been a fan of [AI](https://en.wikipedia.org/wiki/Artificial_intelligence) and [IoT]() for a long time now but after closely following several impressive automation projects last year such as Amazon's [Go](https://www.amazon.com/b?node=16008589011) and [Echo](https://es.wikipedia.org/wiki/Amazon_Echo), I got pretty much obsessed with the idea of machines doing stuff *for or on behalf of you* *(sounds cool right?)*
+
+So this year I decided to build a small automation system for my personal use. Something simple that would not only be fun but could also help me in everyday life. For this purpose, I compiled a list of ***do-able*** tasks that can be done (or already exist) with the help of some programming. My initial plan is to write small scripts for each separate task and then integrate them into once piece of software once I have a collection. Starting with this post, I'll be going through each item on that list in the order of lowest to highest difficulty. Obviously, I might not be able to achieve everything on that list but still it's worth a try and I'll be documenting my progress in these [DevLogs](http://zuhaibahmad.com/tags/#devlog).
+
+---
+
+## Problem
+
+I'm a huge fan of [Flash]() and [Arrow]() and desperately wait every week for new episodes. However, the problem is that there's no [CW TV]() (the channel that broadcasts them) in my country, so the only option left for me is via torrents. *Not a problem! Right?* ***Nope!***
+
+Then I face another problem. When you are in a place where the ***"unlimited"*** connection gives a download speed of **~200Kbps**, choosing between doing your work or putting something on download becomes a matter of trading off one thing for another. My solution (and surely for most of the people living with a shitty connection) is to put your stuff on download at night before going to bed and leave the system turned on.
+
+Now this strategy works pretty well but for a forgetful soul of a software engineer, this too is a task that must go into the **to-do list** in order to avoid the chances of being brushed off my head. So the first item I picked from my list was to make my computer do most of the downloading work for me while I sleep at night. To make the task more helpful, I expanded the scope to not only torrents but also **Steam** and **IDM**. The process is straight forward:
+
+* Make the computer turn on by itself at a specific time (from sleep or hibernation).
+* Start necessary programs.
+* Continue pending downloads.
+* Go back to sleep/shutdown at some specific time in the morning.
+
+So I started my research and what I found surprising was that you don't need to write any code to accomplish this. In the next steps I'll try to demonstrate how I did it for my system:
+
+> Please note that this is only the way I achieved my desired results, there might be much more ways to build even smarter, more complex and efficient systems.
+
+---
+
+## Step 01 : Enabling Wake Timers
+
+Before you set up your computer for timed wake up and shutdown, make sure you have the **Wake Timers** enabled. Wake Timers allows Windows to wake up on timed events. By default, they are disabled on Windows 7 and above. To enable them, following the instruction below.
+
+1. Right-click the battery icon and click **Power Options** or go to **Control Panel** and select **Power Options**.
+
+    {:refdef: style="text-align: center;"}
+    ![Power Options](/assets/images/posts/power_options.png)
+    {: refdef}
+
+2. Click on the **Change Plan Settings** link of your active plan.
+
+    {:refdef: style="text-align: center;"}
+    ![Change Plan Settings](/assets/images/posts/change_plan_settings.png)
+    {: refdef}
+
+3. In next window, click **Change Advanced Power Settings** link.
+
+    {:refdef: style="text-align: center;"}
+    ![Advance Settings](/assets/images/posts/advance_settings.png)
+    {: refdef}
+
+4. Under the **Advanced Settings** window, expand **Sleep** option and then expand **Allow Wake Timers** option. Under **Plugged In**, change **Disable** to **Enable**.
+
+    {:refdef: style="text-align: center;"}
+    ![Allow Wake Timers](/assets/images/posts/allow_wake_timers.png)
+    {: refdef}
+
+## Step 02 : Scheduling Wake Up Tasks
+
+The **Task scheduler** is a powerful yet underestimated feature that comes with Windows OS. It enables you to automatically perform routine tasks on your computer based on whatever criteria you have set. We'll be using Task Scheduler to configure our computer for the automatic wake up and shutdown on specific times. Let's first set up **timed wake up**.
+
+1. Open up Task Scheduler by typing in `task Scheduler` in your Windows Start Menu search bar.
+
+    {:refdef: style="text-align: center;"}
+    ![Open Task Scheduler](/assets/images/posts/open_ts.png)
+    {: refdef}
+
+2. Now, let's create our first task. Click on **Action** ➜ **Create Task**.
+
+    {:refdef: style="text-align: center;"}
+    ![Create Task](/assets/images/posts/create_task.png)
+    {: refdef}
+
+3. In the **general** tab, give your task appropriate name and description 
+
+    {:refdef: style="text-align: center;"}
+    ![General](/assets/images/posts/task_general.png)
+    {: refdef}
+
+4. Next, in the **triggers** tab let's create a trigger for our task. Click the **New** button and set up the time and repeat frequency for your task. Make sure you mark the **Enable** checkbox before pressing **OK**. 
+
+    {:refdef: style="text-align: center;"}
+    ![Trigger](/assets/images/posts/task_trigger.png)
+    {: refdef}
+
+5. This step is optional if you have your software already set to start on windows startup. Create a new action by clicking **New** and then add programs that you want to run when this task is launched.
+
+    {:refdef: style="text-align: center;"}
+    ![Action](/assets/images/posts/task_action.png)
+    {: refdef}
+
+6. Finally, the most important step. Mark the **"Wake the computer to run this task"** in order to allow your task to wake up your computer on its own. You can also tweak some other settings such as running the task only if the internet is available. This is obviously optional but essential if you don't want your computer to stay open doing nothing in case of no internet connectivity.
+
+    {:refdef: style="text-align: center;"}
+    ![Conditions](/assets/images/posts/task_conditions.png)
+    {: refdef}
+
+Your computer is now set to wake up at your specified time. If you want to test this out, simply edit the time trigger and assign it a value close to your current time. Once created, simply sleep/hibernate your computer and wait for the magic to happen.
+
+## Step 03 : Auto Computer Hibernate/Shutdown
+
+In the beginning of the post I said you would not need to write any code for this -- well maybe, I lied. However, I promise it's nothing more than a single line which essentially is the Windows shutdown command for shutting down your computer. So please bear with me and follow these simple steps.
+
+* Open up any text editor of your choice and place the following line into it:
+
+{% highlight bash %}
+shutdown /s
+{% endhighlight %}
+
+> If you want to put the computer to sleep instead, simply replace the `/s` with `/h`
+
+* Then simply save the file with whatever file name you wish to give it but be sure to give it an extension of `.bat` e.g. `shutdown.bat`
+
+* That's it, if you double click this file, your computer will shutdown (or sleep depending on which parameter use used).
+
+## Step 04 : Scheduling Shutdown Task
+
+Now, the final step is to setup the second part of scheduling i.e. turning the PC off at a specific time. To set this up, follow the [same procedure](#step-02--scheduling-wake-up-tasks) and specify the schedule you want your computer to shutdown/sleep. Make sure in the <span class="evidence">step 5</span> you include the script we just created in the programs that are to be launched with this task.
+
+You're all set to test your system. However, one last step for me was to configure Internet Download Manager to automatically launch scheduled downloading task few minutes after my system wakes up. For uTorrent, only launching it was enough since it can automatically resume pending downloads.
+
+## Step 05 : Setting Up IDM For Scheduled Downloading
+
+In order to run the scheduled downloading on IDM after your system wakes up. You have to make sure that IDM is registered either as the startup launch item or in the actions tab of your wake up task. This is to make sure that your IDM is running when it's time for the scheduled downloading to kick in. Now let's set up our scheduler.
+
+1. Open **IDM** and open **scheduler** by clicking **Download** ➜ **Scheduler**.
+
+    {:refdef: style="text-align: center;"}
+    ![Start Scheduler](/assets/images/posts/start_scheduler.png)
+    {: refdef}
+
+2. Next select your **main download queue** or any custom queue that you want to be resumed
+
+    {:refdef: style="text-align: center;"}
+    ![Setup Schedule](/assets/images/posts/setup_schedule.png)
+    {: refdef}
+
+3. Then select `one-time downloading` and specify the time you want this queue to start. You might have noticed that I've set the time to 5 minutes after my wake-up task. Finally, you can optionally specify the repeat frequency, stop time and download complete action as well. Once done, click apply and then close. 
+
+---
+
+## Conclusion
+
+That was it, you have successfully build your own smart download management system that too without any coding. Enjoy your sleep while your computer does the work for you while you are dreaming. Make sure your parents are aware of this or you'll be accused of using the computer all night long.
+
+---
