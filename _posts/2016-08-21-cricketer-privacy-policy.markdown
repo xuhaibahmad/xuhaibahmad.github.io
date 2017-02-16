@@ -10,5 +10,3 @@ externalLink: false
 ---
 
 <iframe src="https://drive.google.com/file/d/0B3ttPSIh55qOMENTWThFbW8ydFk/preview" width="640" height="480"></iframe>
-
----
