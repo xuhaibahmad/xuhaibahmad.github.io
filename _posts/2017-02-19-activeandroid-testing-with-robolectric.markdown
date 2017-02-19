@@ -2,7 +2,7 @@
 title: "ActiveAndroid Testing with Robolectric"
 layout: post
 date: 2017-02-19 04:42
-image: /assets/images/posts/robolectric.png
+image: /assets/images/posts/robolectric.jpg
 headerImage: true
 tag:
 - Android
