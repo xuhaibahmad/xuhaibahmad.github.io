@@ -1,0 +1,38 @@
+---
+title: "Memify - Meme Generator"
+layout: post
+date: 2017-02-22 15:06
+tag: 
+- Android
+- Java
+- REST
+- JSON
+- Meme
+image: /assets/images/portfolio/icons/memify.png
+headerImage: true
+projects: true
+hidden: true # don't count this post in blog pagination
+description: "Create Memes On The Fly."
+jemoji: '<img class="emoji" title="memify" alt="memify" src="/assets/images/portfolio/icons/memify.png" height="20" width="20" align="absmiddle">'
+author: johndoe
+externalLink: false
+---
+
+{:refdef: style="text-align: center;"}
+![Screenshot](/assets/images/portfolio/memify.png)
+{: refdef}
+
+Few days back, while searching for an API, I found this other one that let's you generate meme's via REST API calls. So this weekend I decided to use my spare time and turn it into a fun application. It took just a few hours from start to production and most importantly added a new item to my portfolio to showcase \*wink\*. If you want to check it out, find the link at the bottom of the post.
+
+**Memify** is a simple meme generator that lets you create memes in just 3 simple steps:
+
+1. Choose a meme
+2. Add your text
+3. Hit the Generate button
+
+That's it! You have your meme. Share it with your friends and have a good laugh together.
+
+---
+
+You can find the app on [Play Store](https://play.google.com/store/apps/details?id=com.zuhaibahmad.memify_meemgenerator).<br />
+For suggestions and queries, feel free to [contact me](http://linkedin.com/in/xuhaibahmad).
