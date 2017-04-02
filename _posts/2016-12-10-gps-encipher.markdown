@@ -1,8 +1,8 @@
 ---
-title: "GPS Encipher"
+title: "GPS Cryptographer"
 layout: post
 date: 2016-12-10 19:25
-tag: 
+tag:
 - Android
 - Java
 - Encryption
@@ -12,7 +12,7 @@ image: /assets/images/portfolio/icons/default.png
 headerImage: true
 projects: true
 hidden: true # don't count this post in blog pagination
-description: "Cryptography App with AES Encryption."
+description: "GPS based Cryptography App with AES Encryption."
 jemoji: '<img class="emoji" title="gps_encipher" alt="gps_encipher" src="/assets/images/portfolio/icons/default.png" height="20" width="20" align="absmiddle">'
 author: johndoe
 externalLink: false
