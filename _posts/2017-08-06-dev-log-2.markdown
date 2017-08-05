@@ -1,7 +1,7 @@
 ---
 title: "DevLog 02: Automating Wish Lists | Smarter Shopping with Price Monitoring"
 layout: post
-date: 2017-08-05 07:10
+date: 2017-08-06 01:10
 image: /assets/images/devlog.png
 headerImage: true
 tag:
@@ -12,7 +12,7 @@ tag:
 - Windows
 - Productivity
 blog: true
-draft: true
+draft: false
 star: true
 author: johndoe
 description: A automated system for monitoring items in your wish list on online stores and notify when the prices for items go below defined baseline.
@@ -88,6 +88,7 @@ Our simple scraper will send request with our search queries to the specified we
 
 To make things easier, Python has a brilliant and easy to use library for data scraping called [Beautiful Soup](https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)). We will be using it to write our scraper.
 
+
 {% highlight python %}
 class AmazonScraper:
     # Declare search URL and class names to picked
@@ -154,7 +155,6 @@ class AmazonScraper:
             return 0
         # Remove all the symobls received with the price text
         price = re.sub(r'[–|-||]', "", price_div.text).strip()
-        price = re.sub(r'[\xa0].*$', "", price).strip()
         price = price.replace("$", "")
         # Convert USD to PKR
         price = float(price) * 100
@@ -199,6 +199,7 @@ scraper = AmazonScraper()
 for i in items["items"]:
     p = Product(i)
     scraper.search_item(p)
+    time.sleep(5)
 {% endhighlight %}
 
 
@@ -280,6 +281,7 @@ def display_windows_notification(title, msg):
 That was all the code required, only thing left is the scheduling of this task. The final will look like this:
 
 {% highlight python %}
+import time
 import json
 import math
 import re
@@ -358,7 +360,6 @@ class AmazonScraper:
         if price_div is None:
             return 0
         price = re.sub(r'[–|-||]', "", price_div.text).strip()
-        price = re.sub(r'[\xa0].*$', "", price).strip()
         price = price.replace("$", "")
         # Convert USD to PKR
         price = float(price) * 100
@@ -431,7 +432,9 @@ scraper = AmazonScraper()
 for i in items["items"]:
     p = Product(i)
     scraper.search_item(p)
-
+    # IMPORTANT: Delay each request by 5 seconds
+    # so Amazon wont suspect our bot
+    time.sleep(5)
 {% endhighlight %}
 
 
@@ -461,16 +464,7 @@ That's all! Your script is now ready to execute at every windows start up. For a
 
 In less than 150 lines of code, we created a very sophisticated price monitoring system that is easy to use and scale. Since starting to write this post, I've already expanded the script to work with 4 different local and international stores.
 
-    {:refdef: style="text-align: center;"}
-    ![Price Alert Notification](/assets/images/posts/notification.png)
-    {: refdef}
-
 While this is small system brings a lot of value, there are still some limitations to it. For example, the scrapper for [NewEgg](www.newegg.com) worked for a day or two before the website identified the scraper and placed a "captcha" between the results. Even this is not a dead-end, with the power of Python's text and image recognition libraries, these small barriers can be overcome with just a few lines of code. However, this means consistent maintenance and upgrading in order to keep the system working.
-
-    {:refdef: style="text-align: center;"}
-    ![Excel File For Available Products](/assets/images/posts/available_wishlist_products.png)
-    {: refdef}
-
 
 ---
 
