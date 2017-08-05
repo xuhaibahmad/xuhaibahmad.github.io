@@ -1,0 +1,478 @@
+---
+title: "DevLog 02: Automating Wish Lists | Smarter Shopping with Price Monitoring"
+layout: post
+date: 2017-08-05 07:10
+image: /assets/images/devlog.png
+headerImage: true
+tag:
+- DevLog
+- Automation
+- Python
+- Shopping
+- Windows
+- Productivity
+blog: true
+draft: true
+star: true
+author: johndoe
+description: A automated system for monitoring items in your wish list on online stores and notify when the prices for items go below defined baseline.
+---
+
+Remember when Mark Zuckerberg unveiled his [AI assistant](https://www.facebook.com/zuck/videos/10103351034741311/) during the Christmas break last December? Everyone (including me) was super excited and many people got specially interested in automation related stuff. That's when I wrote the [first post](/dev-log-1/) of this series pledging to work on a small scale automation projects and writing about them along the way.
+
+Well.. as expected, life happened and all the crazy ideas along with all the excitement got lost somewhere in the abyss of procrastinated projects. Only recently, I found time (and motivation) to start the project once again and made the first *"actual"* automation script.
+
+---
+
+## Problem
+
+Online shopping has made life a lot easier for us couch potatoes around the world. We lay around half-dead, scroll few pages on online stores and summon the products we want at our doorsteps. I, however, am among those cheapskates who wait for the sales seasons for the fulfilment of their wish-lists.
+
+Seemingly, these stores know about the existence of our species too. Many times, a lot of our desired items doesn't observe any discounts even in the sales seasons. Even when this isn't the case, impatience goes hands-in-hand with laziness anyway.
+
+> "Life is too short to wait for sales seasons" - Cheapo McCheapAss
+
+Frustrated with not being able to buy an item for months, I came up with this idea of a script that could sit silently at my system and monitor the prices for the items I need in the background and notify me whenever the prices go below the specified baseline.
+
+With little googling, I found some useful tools for data scraping with `Python` (didn't had any prior experience of Python programing before this) which made things very straight forward. The basic recipe consists of following steps:
+
+* Define a structured list of items along with your desired baseline prices.
+* Write a web scraper for the chosen online store to fetch the search results.
+* Match the prices for scraped items against those in the wish-list.
+* Display windows notifications and write the "ready to buy" items to an Excel file along with the product links.
+* Schedule the script to run at windows start up.
+
+Through the rest of the post I'll be demonstrating the procedure. As prerequisites, you'll need Python along with [pip](https://pypi.python.org/pypi/pip) package manager installed on your system. I'd highly recommend using [Anaconda](https://www.continuum.io/downloads) as your default Python as it has almost all of the required modules pre-installed. To keep things simple, I'll limit the code to just a single online store, but hopefully, with little Python knowledge you can expand the script to work with as many store as you want.
+
+> After starting to learn just a week ago, I consider myself absolutely noob at Python right now. So if you see something stupid in the code, please feel free to correct me because I only managed to write a "working" system with the limited knowledge I have.
+
+---
+
+## Step 01 : Defining The Wish-List
+
+JSON is now a go-to format for structured data representation. We'll be using it to define our so called "wish-list". Every item in the list will consist of following 3 attributes:
+
+1. `description`:  A common description for the product that you can find on most of the stores for the specific product. Since the search results on websites usually contains a lot of irrelevant stuff along with the required items. This description will help us identify the similar items from search results.
+
+2. `name`: This will be our search term that we will send along with the search query.
+
+3. `baseline_price`: This will be the price at which we want to be notified about this item.
+
+> I have allowed the *K* notation as a shorthand for baseline_price prices in the `JSON`, so we can optionally specify prices as 1K, 5K etc. instead of whole numbers
+
+The `wishlist.json` file will look something like this:
+
+{% highlight json %}
+{
+  "items": [
+    {
+      "description": "Sapphire Radeon R9 270x",
+      "name": "Sapphire R9",
+      "baseline_price": "12K"
+    }, {
+      "description": "Gigabyte LGA 1151 Z170",
+      "name": "Gigabyte Z170",
+      "baseline_price": "13200"
+    }
+  ]
+}
+{% endhighlight %}
+
+Now, once the system is setup, all you have to do is manage this file to get notifications for desired items.
+
+## Step 02 : Writing The Web Scraper
+
+**Web Scrapers** are programs used to extract large amounts of data from websites whereby the data is extracted and saved to a local file in your computer or to a database in a structured format.
+
+Our simple scraper will send request with our search queries to the specified websites and then pick the target `HTML` attributes from the returned results. You will have to examine the source of websites you want to scrap before writing the code for them. Most of them represent data in a structured way with consistent `Ids` and `classes`. Once the target tags have been picked, all you need to do is extracting the their values and parse them to relevant data structures.
+
+To make things easier, Python has a brilliant and easy to use library for data scraping called [Beautiful Soup](https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)). We will be using it to write our scraper.
+
+{% highlight python %}
+class AmazonScraper:
+    # Declare search URL and class names to picked
+    BASE_URL = 'https://www.amazon.com/s/ref=nb_sb_noss/' \
+               '134-4639554-0290304?url=search-alias%3Daps&' \
+               'field-keywords={}'
+    PRODUCT_TITLE_CLASS = "a-link-normal s-access-detail-page " \
+                               "s-color-twister-title-link " \
+                               "a-text-normal"
+    PRODUCT_BRAND_CLASS = "a-size-small a-color-secondary"
+    PRODUCT_PRICE_CLASS = "a-size-base a-color-base"
+
+    def search_item(self, product):
+        # Read the page contents
+        query = urllib.parse.quote(product.name)
+        url = self.BASE_URL.format(query)
+        # Get structured data using beautiful soup
+        data = bSoup(requests.get(url).text, "html.parser")
+
+        # Find all the item containers
+        containers = data.findAll(
+            "div", {"class", "a-fixed-left-grid-col a-col-right"}
+        )
+
+        # Get item information for each item in container
+        if len(containers) > 0:
+            for item in containers:
+                title_div = item.find(
+                    "a", {"class", self.PRODUCT_TITLE_CLASS}
+                )
+                price_div = item.find(
+                    "span", {"class", self.PRODUCT_PRICE_CLASS}
+                )
+                brand_div = item.findAll(
+                    "span", {"class", self.PRODUCT_BRAND_CLASS}
+                )[1]
+
+                title = title_div.text
+                brand = brand_div.text
+                price = self.extract_price(price_div)
+                link = title_div["href"]
+
+                # Display Windows Notification and write the product
+                # details to a csv file when the Price picked form
+                # the search result is less than or equal to our
+                # baseline price for the item and the product's
+                # descriptions has a similarity rate of more than 45%
+                price = math.floor(float(price))
+                baseline_price = float(product.baseline_price)
+                if baseline_price >= price > 0:
+                    prompt = "\"" + title.replace(",", "|") + \
+                             "\" is now available in " + \
+                             str(price) + " at Amazon (Baseline:" + \
+                             " " + product.baseline_price + ")"
+                    details = get_details(brand, price, title, link)
+                    if is_similar(title, product.description):
+                        print_similarity(title, product.description)
+                        display_windows_notification(brand, prompt)
+                        write_to_csv(details)
+
+    @staticmethod
+    def extract_price(price_div):
+        if price_div is None:
+            return 0
+        # Remove all the symobls received with the price text
+        price = re.sub(r'[–|-||]', "", price_div.text).strip()
+        price = re.sub(r'[\xa0].*$', "", price).strip()
+        price = price.replace("$", "")
+        # Convert USD to PKR
+        price = float(price) * 100
+        return math.floor(price)
+{% endhighlight %}
+
+
+## Step 03 : Run Scrapper for each Product in Wish-List
+
+Once the main component of our system i.e. scraper is in place. We need to set up a routine that could read from our `wishlist.json` file and parse its contents into data models. These model object will then be passed to our scrapper for further processing.
+
+In the procedure, we'll also be creating a `available_wishlist_products.csv` file that will carry all the latest ready-to-purchase items.
+
+{% highlight python %}
+class Product:
+    def __init__(self, product):
+        self.description = product["description"]
+        self.name = product["name"]
+        self.baseline_price = product["baseline_price"]
+        # Allowed number representation in 'K' format
+        # (e.g. 3K, 10K etc) in json. Here while parsing,
+        # convert the prices with K notation to numeric value
+        has_k = str(self.baseline_price).lower().__contains__("k")
+        price = self.baseline_price[:-1]
+        price = int(price) * 1000
+        self.baseline_price = price if has_k else self.baseline_price
+
+
+# Read all the items from the wishlist.json
+with open('wishlist.json') as data_file:
+    items = json.load(data_file)
+
+# Create csv file to write available items to
+filename = "available_wishlist_products.csv"
+f = open(filename, "w")
+headers = "Date, Title, Brand, Price, Link\n"
+f.write(headers)
+f.close()
+
+# Parse JSON into Product objects and pass them to scraper for search
+scraper = AmazonScraper()
+for i in items["items"]:
+    p = Product(i)
+    scraper.search_item(p)
+{% endhighlight %}
+
+
+## Step 04 : Writing The Utility Functions
+
+You might have noticed calls to many unknown functions in the script we have written so far (e.g. `print_similarity`, `display_windows_notification`, `write_to_csv`). In the last part of the script, we'll be writing these utility functions.
+
+### Get Item Details
+
+This utility function will prepare the data for writing to `csv` file by reformatting the text and generating a coma separated string from them.
+
+{% highlight python %}
+def get_details(brand, price, title, link):
+    details = title.replace(",", "|") + ", " + \
+              brand.replace(",", "|") + ", " + \
+              str(math.floor(float(price))) + ", " + \
+              link
+    return details
+{% endhighlight %}
+
+### Write Details To CSV File
+
+As the name suggests, this function will open our output file and write the contents of available items to it along with the date.
+
+> Notice that this time we open the file with `a` parameter (for appending) unlike in the main routine where we recreate the file every time with a `w` flag.
+
+{% highlight python %}
+def write_to_csv(details):
+    file = open("available_wishlist_products.csv", "a")
+    time = strftime("%a, %d %b %Y", gmtime())
+    details = time.replace(",", " ") + ", " + details + "\n"
+    file.write(details)
+    file.close()
+    print("\nProduct Details: ")
+    print(details)
+{% endhighlight %}
+
+### Check Similarity Between The Product Descriptions
+
+Since search results often bring a lot of irrelevant results, it is important that we check for the resemblance between the descriptions of our define product and the item received from search results. I have set a threshold of 45% for similarity in descriptions to make an item qualify as legitimate result.
+
+Now as you may have guessed, checking for alikeness between two set of texts seems a very difficult task. Thankfully, Python comes to rescue once again with its [difflib](https://docs.python.org/2/library/difflib.html).
+
+{% highlight python %}
+def is_similar(a, b):
+    similarity_percent = SequenceMatcher(None, a, b).ratio() * 100
+    return similarity_percent > 45
+{% endhighlight %}
+
+This function is pretty much useless but helps debug when ran from console. You can omit it from your code if you don't want to print results to the console.
+
+{% highlight python %}
+def print_similarity(a, b):
+    similarity_percent = SequenceMatcher(None, a, b).ratio() * 100
+    print("Similarity % between " + b + " and " + a + ": " +
+          str(similarity_percent))
+{% endhighlight %}
+
+### Displaying Windows Notifications
+
+The last part is to display Windows toast notifications for new available items. If you were using **Anaconda**, this will be the only module that you'll have to install yourself:
+
+{% highlight bash %}
+pip install win10toast
+{% endhighlight %}
+
+We're simply creating an instance of `ToastNotifier` and supplying it a title and message to display along with option icon path and a duration.
+
+{% highlight python %}
+def display_windows_notification(title, msg):
+    print(msg)
+    notification = ToastNotifier()
+    notification.show_toast(
+      title, msg, icon_path=ICON_PATH, duration=30
+    )
+{% endhighlight %}
+
+
+That was all the code required, only thing left is the scheduling of this task. The final will look like this:
+
+{% highlight python %}
+import json
+import math
+import re
+import urllib.parse
+from time import strftime, gmtime
+import requests
+from bs4 import BeautifulSoup as bSoup
+from win10toast import ToastNotifier
+from difflib import SequenceMatcher
+
+# Path to icon file to display with the notifications
+ICON_PATH = "<Path to .ico File>"
+
+
+class AmazonScraper:
+    # Declare search URL and class names to picked
+    BASE_URL = 'https://www.amazon.com/s/ref=nb_sb_noss/' \
+               '134-4639554-0290304?url=search-alias%3Daps&' \
+               'field-keywords={}'
+    PRODUCT_TITLE_CLASS = "a-link-normal s-access-detail-page " \
+                          "s-color-twister-title-link " \
+                          "a-text-normal"
+    PRODUCT_BRAND_CLASS = "a-size-small a-color-secondary"
+    PRODUCT_PRICE_CLASS = "a-size-base a-color-base"
+
+    def search_item(self, product):
+        # Read the page contents
+        query = urllib.parse.quote(product.name)
+        url = self.BASE_URL.format(query)
+        # Get structured data using beautiful soup
+        data = bSoup(requests.get(url).text, "html.parser")
+
+        # Find all the item containers
+        containers = data.findAll(
+            "div", {"class", "a-fixed-left-grid-col a-col-right"}
+        )
+
+        # Get item information for each item in container
+        if len(containers) > 0:
+            for item in containers:
+                title_div = item.find(
+                    "a", {"class", self.PRODUCT_TITLE_CLASS}
+                )
+                price_div = item.find(
+                    "span", {"class", self.PRODUCT_PRICE_CLASS}
+                )
+                brand_div = item.findAll(
+                    "span", {"class", self.PRODUCT_BRAND_CLASS}
+                )[1]
+
+                title = title_div.text
+                brand = brand_div.text
+                price = self.extract_price(price_div)
+                link = title_div["href"]
+
+                # Display Windows Notification and write the product
+                # details to a csv file when the Price picked form
+                # the search result is less than or equal to our
+                # baseline price for the item and the product's
+                # descriptions has a similarity rate of more than 45%
+                price = math.floor(float(price))
+                baseline_price = float(product.baseline_price)
+                if baseline_price >= price > 0:
+                    prompt = "\"" + title.replace(",", "|") + \
+                             "\" is now available in " + \
+                             str(price) + " at Amazon (Baseline:" + \
+                             " " + product.baseline_price + ")"
+                    details = get_details(brand, price, title, link)
+                    if is_similar(title, product.description):
+                        print_similarity(title, product.description)
+                        display_windows_notification(brand, prompt)
+                        write_to_csv(details)
+
+    @staticmethod
+    def extract_price(price_div):
+        if price_div is None:
+            return 0
+        price = re.sub(r'[–|-||]', "", price_div.text).strip()
+        price = re.sub(r'[\xa0].*$', "", price).strip()
+        price = price.replace("$", "")
+        # Convert USD to PKR
+        price = float(price) * 100
+        return math.floor(price)
+
+
+class Product:
+    def __init__(self, product):
+        self.description = product["description"]
+        self.name = product["name"]
+        self.baseline_price = product["baseline_price"]
+        # Allowed number representation in 'K' format
+        # (e.g. 3K, 10K etc) in json. Here while parsing,
+        # convert the prices with K notation to numeric value
+        has_k = str(self.baseline_price).lower().__contains__("k")
+        price = self.baseline_price[:-1]
+        price = int(price) * 1000
+        self.baseline_price = price if has_k else self.baseline_price
+
+
+def get_details(brand, price, title, link):
+    details = title.replace(",", "|") + ", " + \
+              brand.replace(",", "|") + ", " + \
+              str(math.floor(float(price))) + ", " + \
+              link
+    return details
+
+
+def write_to_csv(details):
+    file = open("available_wishlist_products.csv", "a")
+    time = strftime("%a, %d %b %Y", gmtime())
+    details = time.replace(",", " ") + ", " + details + "\n"
+    file.write(details)
+    file.close()
+    print("\nProduct Details: ")
+    print(details)
+
+
+def is_similar(a, b):
+    similarity_percent = SequenceMatcher(None, a, b).ratio() * 100
+    return similarity_percent > 45
+
+
+def print_similarity(a, b):
+    similarity_percent = SequenceMatcher(None, a, b).ratio() * 100
+    print("Similarity % between " + b + " and " + a + ": " +
+          str(similarity_percent))
+
+
+def display_windows_notification(title, msg):
+    print(msg)
+    notification = ToastNotifier()
+    notification.show_toast(
+        title, msg, icon_path=ICON_PATH, duration=30
+    )
+
+# Read all the items from the wishlist.json
+with open('wishlist.json') as data_file:
+    items = json.load(data_file)
+
+# Create csv file to write available items to
+filename = "available_wishlist_products.csv"
+f = open(filename, "w")
+headers = "Date, Title, Brand, Price, Link\n"
+f.write(headers)
+f.close()
+
+# Parse JSON into Product objects and pass them to scraper for search
+scraper = AmazonScraper()
+for i in items["items"]:
+    p = Product(i)
+    scraper.search_item(p)
+
+{% endhighlight %}
+
+
+## Step 05 : Scheduling Auto Execution Of The Script
+
+Our system is now up and running, you can run it using Python from command line now. However, what's the fun in it if you have to run it yourself every time?
+
+In this final step, we'll set up our script to run at every windows start up.
+
+1. Open a text editor and write the following cmd commands.
+
+{% highlight bash %}
+cd /d "<Path To Your Script Folder>"
+python.exe "<Script Name>.py"
+{% endhighlight %}
+
+2. Save the file with `.bat` extension. Try running the file and see if the program gets executed.
+
+3. Create a shortcut of this file and copy it to "C:\Documents and Settings\<Your Windows User Name>\Start Menu\Programs\Startup"
+
+
+That's all! Your script is now ready to execute at every windows start up. For a quick test, try signing out of your windows and sign in again.
+
+---
+
+## Conclusion
+
+In less than 150 lines of code, we created a very sophisticated price monitoring system that is easy to use and scale. Since starting to write this post, I've already expanded the script to work with 4 different local and international stores.
+
+    {:refdef: style="text-align: center;"}
+    ![Price Alert Notification](/assets/images/posts/notification.png)
+    {: refdef}
+
+While this is small system brings a lot of value, there are still some limitations to it. For example, the scrapper for [NewEgg](www.newegg.com) worked for a day or two before the website identified the scraper and placed a "captcha" between the results. Even this is not a dead-end, with the power of Python's text and image recognition libraries, these small barriers can be overcome with just a few lines of code. However, this means consistent maintenance and upgrading in order to keep the system working.
+
+    {:refdef: style="text-align: center;"}
+    ![Excel File For Available Products](/assets/images/posts/available_wishlist_products.png)
+    {: refdef}
+
+
+---
+
+Source Code for this project is available at [GitHub repository](https://github.com/xuhaibahmad/PELL){:target="_blank"}.<br />
+For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad){:target="_blank"}.
