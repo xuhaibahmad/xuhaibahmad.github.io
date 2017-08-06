@@ -15,7 +15,7 @@ blog: true
 draft: false
 star: true
 author: johndoe
-description: A automated system for monitoring items in your wish list on online stores and notify when the prices for items go below defined baseline.
+description: An automated system for monitoring items in your wish list on online stores and notify when the prices for items go below defined baseline.
 ---
 
 Remember when Mark Zuckerberg unveiled his [AI assistant](https://www.facebook.com/zuck/videos/10103351034741311/) during the Christmas break last December? Everyone (including me) was super excited and many people got specially interested in automation related stuff. That's when I wrote the [first post](/dev-log-1/) of this series pledging to work on a small scale automation projects and writing about them along the way.
@@ -453,7 +453,7 @@ python.exe "<Script Name>.py"
 
 2. Save the file with `.bat` extension. Try running the file and see if the program gets executed.
 
-3. Create a shortcut of this file and copy it to "C:\Documents and Settings\[User Name]\Start Menu\Programs\Startup" if you are running older version of windows or otherwise to "C:\Users\[User Name]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup".
+3. Create a shortcut of this file and copy it to `C:\Documents and Settings\[User Name]\Start Menu\Programs\Startup` if you are running older version of windows or otherwise to `C:\Users\[User Name]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` if your are running Windows 10.
 
 
 That's all! Your script is now ready to execute at every windows start up. For a quick test, try signing out of your windows and sign in again.
