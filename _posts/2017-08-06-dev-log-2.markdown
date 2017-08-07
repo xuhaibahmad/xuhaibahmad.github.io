@@ -448,7 +448,7 @@ In this final step, we'll set up our script to run at every windows start up.
 
 {% highlight bash %}
 cd /d "<Path To Your Script Folder>"
-python.exe "<Script Name>.py"
+start pythonw "<Script Name>.py"
 {% endhighlight %}
 
 2. Save the file with `.bat` extension. Try running the file and see if the program gets executed.
