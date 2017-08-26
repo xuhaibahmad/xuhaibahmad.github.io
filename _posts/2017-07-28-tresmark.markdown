@@ -1,0 +1,31 @@
+---
+title: "Tresmark"
+layout: post
+date: 2017-07-28 22:24
+tag:
+- Android
+- Java
+- REST
+- Firebase
+- SQLite
+- Real-Time Data
+image: /assets/images/portfolio/icons/tresmark.png
+headerImage: true
+projects: true
+hidden: true # don't count this post in blog pagination
+description: "Tresmark"
+jemoji: '<img class="emoji" title="tresmark" alt="tresmark" src="/assets/images/portfolio/icons/tresmark.png" height="20" width="20" align="absmiddle">'
+author: johndoe
+externalLink: false
+---
+
+{:refdef: style="text-align: center;"}
+![Screenshot](/assets/images/portfolio/tresmark.png)
+{: refdef}
+
+Tresmark is a product of landmark investments that gives you access to global market data including currencies, commodities, equities and fixed income. Our easy to use platform gives you access to several charting and analytic tools to trade more efficiently. The terminal is for professional traders and senior management to get deeper visibility in financial markets, and is a must have tool for risk managers.
+
+---
+
+You can find the app on [Play Store](https://play.google.com/store/apps/details?id=com.mindscollide.tresmark).<br />
+For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad).
