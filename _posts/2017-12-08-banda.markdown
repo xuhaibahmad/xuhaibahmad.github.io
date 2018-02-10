@@ -1,0 +1,33 @@
+---
+title: "Banda"
+layout: post
+date: 2017-12-08 22:24
+tag:
+- Android
+- Java
+- REST
+- Google Maps
+- RxJava
+- Real-Time Data
+image: /assets/images/portfolio/icons/banda.png
+headerImage: true
+projects: true
+hidden: true # don't count this post in blog pagination
+description: "Banda"
+jemoji: '<img class="emoji" title="banda" alt="banda" src="/assets/images/portfolio/icons/banda.png" height="20" width="20" align="absmiddle">'
+author: johndoe
+externalLink: false
+---
+
+{:refdef: style="text-align: center;"}
+![Screenshot](/assets/images/portfolio/banda.png)
+{: refdef}
+
+Banda is a platform that helps connect commuters to drivers, It exists to create a platform where ordinary citizens of Pakistan have a chance to utilize their skills/assets to earn clean, respectable and halal income.
+
+Banda is an application for Pakistanis who are looking for simple solutions to earn money. This application was created to eliminate difficult steps of becoming a driver. It is absolutely free to use for everyone.
+
+---
+
+You can find the app on [Play Store](https://play.google.com/store/apps/details?id=com.Banda.earn).<br />
+For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad).
