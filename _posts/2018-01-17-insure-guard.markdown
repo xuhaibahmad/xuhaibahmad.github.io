@@ -21,11 +21,11 @@ externalLink: false
 ![Screenshot](/assets/images/portfolio/insure_guard.png)
 {: refdef}
 
-Written completely in Kotlin, Insure Guard is a simply record keeping application dedicated to Insurance documents. The app uses Firebase Storage for database and also uses it's Authenitcation services for user management. 
+Written completely in Kotlin, Insure Guard is a simple record keeping application dedicated to Insurance documents. The app uses Firebase Storage for database and also uses it's Authenitcation services for user management. 
 
 Main features of app invovle image capture, data input, records listing, email and phone notifications. The project is expected to go into second phase with some new ideas and feature requests from the users.
 
 ---
 
-You can find the app on [Play Store](https://play.google.com/store/apps/details?id=com.zuhaibahmad.insureproof guard).<br />
+You can find the app on [Play Store](https://play.google.com/store/apps/details?id=com.zuhaibahmad.insureproof).<br />
 For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad).
