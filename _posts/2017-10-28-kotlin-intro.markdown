@@ -1,5 +1,5 @@
 ---
-title: "Kotlin: Java on steroids or something more? | A Bird's-Eye View"
+title: "Kotlin: Java on steroids or something more?"
 layout: post
 date: 2017-10-28 01:10
 image: /assets/images/posts/kotlin_vs_java.png
@@ -165,10 +165,8 @@ public class Customer {
    @Override
    public int hashCode() {
        int result = name != null ? name.hashCode() : 0;
-       result = 31 * result + 
-            (email != null ? email.hashCode() : 0);
-       result = 31 * result + 
-            (company != null ? company.hashCode() : 0);
+       result = 31 * result + (email != null ? email.hashCode() : 0);
+       result = 31 * result + (company != null ? company.hashCode() : 0);
        return result;
    }
 
@@ -186,8 +184,7 @@ public class Customer {
 **That's around 70 lines for a simple POJO!** Even if the IDE generates them for us, it is every difficult to maintain in the longer run. Now let's look at what the Kotlin equivalent of this would look like:
 
 {% highlight kotlin %}
-data class Customer(var name: String, var email: String = "",
-                    var company: String = "")
+data class Customer(var name: String, var email: String = "", var company: String = "")
 {% endhighlight %}
 
 Yes, that's it! A single line that provide you a fully functional data object with  `equals()`, `hashCode()`, `clone()` and `toString()` functionality baked right into it. So now your entire package of data classes can be combined into a single Kotlin file.
@@ -318,20 +315,19 @@ I think most of you would agree that if we had default parameters in Java, it co
 Kotlin solves this problem. Here's an example of extension function for `AppCompatActivity` that displays a `Snackbar` with short duration when the duration is not provided.
 
 {% highlight kotlin %}
-fun AppCompatActivity.displayMessage(container: ViewGroup, 
-    message: String, length: Int = Snackbar.LENGTH_SHORT) =
-        Snackbar.make(container, message, length).show()
+fun AppCompatActivity.displayMessage(
+  container: ViewGroup, 
+  message: String, 
+  length: Int = Snackbar.LENGTH_SHORT
+) = Snackbar.make(container, message, length).show()
 {% endhighlight %}
 
 Not only we can give default values to parameters but also use them with their name, so we can call them independent of their order of declaration. For example, I can call my `displayMessage()` function in any of the given orders:
 
 {% highlight kotlin %}
-displayMessage(container = c, message = "Hello!", 
-    length = Snackbar.LENGTH_LONG)
-displayMessage(message = "Hello!", container = c, 
-    length = Snackbar.LENGTH_LONG)
-displayMessage(message = "Hello!", length = Snackbar.LENGTH_LONG, 
-    container = c)
+displayMessage(container = c, message = "Hello!", length = Snackbar.LENGTH_LONG)
+displayMessage(message = "Hello!", container = c, length = Snackbar.LENGTH_LONG)
+displayMessage(message = "Hello!", length = Snackbar.LENGTH_LONG, container = c)
 {% endhighlight %}
 
 ### 100% Java Interoperability

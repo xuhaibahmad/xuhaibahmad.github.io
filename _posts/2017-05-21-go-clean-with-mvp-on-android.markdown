@@ -42,10 +42,10 @@ Android activities are cluttered with closely coupled components where everythin
 
 When you separate the business logic away from the activity in a separate presentation layer, it automatically makes it trivial to mock and test your code the way you would test any other java class.
 
-The other difficulty apart from code testing is the maintenance of existing codebase. If you are reading this post and understand what I have said so far, I am assuming that you are at that point where you are familiar with the [SOLID](https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29){:target="_blank"} principles of object oriented design by [Robert C. Martin a.k.a Uncle Bob](https://en.wikipedia.org/wiki/Robert_Cecil_Martin
-). The last part of the five principles refers to the *Dependency Inversion Principle (DIP)* which encourages the programmers to write code in a way that it **depends upon abstractions instead of the concrete implementations**.
+The other difficulty apart from code testing is the maintenance of existing codebase. If you are reading this post and understand what I have said so far, I am assuming that you are at that point where you are familiar with the [SOLID](https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29){:target="blank"} principles of object oriented design by [Robert C. Martin a.k.a Uncle Bob](https://en.wikipedia.org/wiki/Robert_Cecil_Martin
+){:target="blank"}. The last part of the five principles refers to the *Dependency Inversion Principle (DIP)* which encourages the programmers to write code in a way that **it depends upon abstractions instead of the concrete implementations**.
 
-The way MVP is implemented nowadays (or at least they way I learned to) is through *`Contract`* interfaces that describes the responsibilities of *`Views`* and the *`Presenters`*, making the maintenance of code as simple as adding a new method to the interface and its implementation in the corresponding class. Note that this decoupling also allows us for interchangeable views for the same business logic.
+The way MVP is implemented nowadays (or at least they way I learned to) is through `Contract` interfaces that describes the responsibilities of `Views` and the `Presenters`, making the maintenance of code as simple as adding a new method to the interface and its implementation in the corresponding class. Note that this decoupling also allows us for interchangeable views for the same business logic.
 
 Now let's put a full-stop to the theoretical stuff and explore the implementation details of Model, View and Presenter by building a very basic ***hello world MVP app***.
 
@@ -83,8 +83,7 @@ interface View extends BaseView<Presenter> {
 Now all I have to do is create a new class and make it implement this interface and we have a candidate that can serve as View for our activity. I guess you might have guessed that we can provide multiple implementations of View as well for different use cases.
 
 {% highlight java %}
-public class MainActivity extends AppCompatActivity
-    implements ContractMain.View {
+public class MainActivity extends AppCompatActivity implements ContractMain.View{
 
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
@@ -178,8 +177,7 @@ class MainPresenter implements ContractMain.Presenter {
 
         if (isEmptyInput(numberOne, numberTwo)) {
             // Display error message if any of the inputs is empty
-            mView.displayMessage(mContext
-                .getString(R.string.error_empty_input));
+            mView.displayMessage(mContext.getString(R.string.error_empty_input));
         } else {
             // Compute and pass the result to view for display
             final int firstNumber = Integer.parseInt(numberOne);
@@ -265,5 +263,5 @@ At this point, it may make sense to your or it won't, but sooner or later, you'l
 
 ---
 
-Source Code is available at [GitHub repository](https://github.com/xuhaibahmad/MVP-Tutorial){:target="_blank"}.<br />
-For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad){:target="_blank"}.
+Source Code is available at [GitHub repository](https://github.com/xuhaibahmad/MVP-Tutorial){:target="blank"}.<br />
+For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad){:target="blank"}.

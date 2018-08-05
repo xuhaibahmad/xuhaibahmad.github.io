@@ -1,0 +1,148 @@
+---
+title: "Why Reactive Should Be Default for Mobile"
+layout: post
+date: 2018-08-04 01:10
+image: /assets/images/posts/rx_logo.png
+headerImage: true
+tag:
+- ReactiveX
+- Reactive Programming
+- Java
+- Android
+- Mobile
+blog: true
+draft: false
+star: true
+author: johndoe
+description: Why state management on mobile platforms in difficult and how reactive programming can solve some problems.
+---
+
+In the early days of software, the way code was written was pretty straight forward. You would start at a single entry point in the program (typically a **main** function), execute the instructions sequentially and end the program gracefully. It was simple and easy to conceptualize.
+
+Due to the linear control flow, it was not only easier to manage the [state](https://en.wikipedia.org/wiki/State_(computer_science)) of the program but also to test and debug it because all the possible outcomes were predictable. The success of this imperative approach contributed to the way programming mindset established in the years to come. Today, most of us like to think in imperative fashion regardless of the platform or technology we work with.
+
+## Imperative Approach Fails With Modern Systems
+
+> “All modern systems are asynchronous.”
+
+This may seem misleading at first but if you think about it, almost every system today requires us to code in non-blocking fashion. What I mean by non-blocking is that, you need to eliminate waiting periods from the system as much as you can. For example, it’s not ideal to display a loading indicator to the user while a network request is being processed. Although many still follow this pattern but from user experience standpoint, this is a recipe for disaster. 
+
+> “Nobody likes to wait and they’ll leave if they are not served instantly.”
+
+The situation worsens with mobile platforms where the OS itself is a source of a countless external changes. You could just flip your device and it’ll break your app unless you have added 3x more code than required just to handle a rotation scenario. What is surprising though, is that almost all of these popular mobile platforms were not designed to be reactive despite them being asynchronous by nature.
+
+## Reactive Programming
+
+Hmmm… So what exactly is Reactive Programming? Let’s take some help from Wikipedia:
+
+> “In computing, reactive programming is a declarative programming paradigm concerned with data streams and the propagation of change.”
+
+
+![Wut?](https://media.giphy.com/media/SqmkZ5IdwzTP2/giphy.gif#center)
+
+
+Never mind! So, consider you have a program in which we have a Button and Label. They are defined as classes, like any other thing in an object oriented system. All this program does is updates the Label’s text to “Clicked!” when the Button is clicked. So we can say that the Button can somehow affect the text inside the Label, right?
+
+
+![OO Relation](/assets/images/posts/relation.png#center)
+
+
+So the case is simple, Button can be clicked and Label can be updated, both can be defined as a function in their respective classes. Now, here’s a question! If you were to code this interaction, where would you put the logic for updating the label when the button is clicked? Is it inside the Button itself or the Label?
+
+Let’s say you go with the button, which btw is how we normally do it, then in this case you’ll need a reference of Label inside your button which you can update whenever the button is clicked. This essentially is Proactive way of programming. We basically delegated all the responsibility of state-management to the Button and let the Label stay passive i.e. don’t care about what is going on outside. Just follow the instructions when interacted.
+
+
+![Proactive Relation](/assets/images/posts/proactive_relation.png#center)
+
+The class `Button` would look something like this:
+
+
+{% highlight kotlin %}
+class Button (val label: Label) {
+  public fun onClick() {
+    label.setText("Clicked!")
+  }
+}
+{% endhighlight %}
+
+
+The alternative to this approach is Reactive programming. We basically just invert the roles so that the state owner has the ability to change itself, letting the Button call for change and Label react to it.
+
+
+![Reactive Relation](/assets/images/posts/reactive_relation.png#center)
+
+In this case, the `Button` class would be similar to this (notice how there's absolutely no trace of label or any outside dependency):
+
+
+{% highlight kotlin %}
+class Button {
+
+  interface ClickListener {
+    fun doOnClick()
+  }
+
+  var listener: ClickListener? = null
+
+  public fun onClick() {
+    listener?.doOnClick()
+  }
+
+  public fun addOnClickListener(l: ClickListener) {
+    listener = l
+  }
+}
+{% endhighlight %}
+
+
+While the `Label` will carry all the code for state its management along with list of all the registered clients.
+
+{% highlight kotlin %}
+class Label (val buttons: MutableList<Button>) {
+
+  private var text = ""
+
+  init {
+    buttons.forEach {
+      it.addOnClickListener { 
+        this.setText("Clicked!") 
+      }
+    }
+  }
+
+  private fun setText(text: String) {
+    this.text = text
+  }
+}
+{% endhighlight %}
+
+
+> But why reactive? What changes with this approach?
+
+First, the [Inversion of Control](https://en.wikipedia.org/wiki/Inversion_of_control) i.e. Label class is now completely responsible of managing its own state and can easily hide away all the implementation details from outside world.
+
+Second but related, is that now we have only one source of change. What I mean by that is how previously we had to make `setText` method public and all the clients could call it whenever they wanted, which means increased complexity. Now we have a hidden `setText` method that is called from only one place i.e. inside `Button`'s `doOnClick` callback and you can attach as many clients to it as you want using the `addOnClickListener` callback. This leads to [Separation of Concern](https://en.wikipedia.org/wiki/Separation_of_concerns) and simplified codebase.
+
+## Reactive Extensions
+
+As described in the previous section, [Callbacks](https://en.wikipedia.org/wiki/Callback_(computer_programming)) are key enablers of reactive programming. However, this way of doing things can lead to a very uncomfortable situation known as [Callback Hell](https://stackoverflow.com/.../what-is-callback-hell-and-how-and-why-rx-solves-it). [Reactive Extensions](reactivex.io/) (abbreviated as RX) is a framework that helps address such issues.
+
+The basic building blocks of the library are **Observable**, **Observers** and **Operators**. If you are familiar with the [Observer Pattern](https://en.wikipedia.org/wiki/Observer_pattern), this is essentially the same pattern with some enhancements. You make things Observable and let some other things Observe these observables, during the process where Observable produces some data and the Observable receives it, you apply some Operators to mold the data in the form you like to have at the receiving end.
+
+To learn more about the framework, checkout this [talk by Kaushik Gopal](https://www.youtube.com/watch?v=k3D0cWyNno4&t=1s) or the [guide by André Staltz](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754).
+
+## Mobile & RX Movement
+
+Now that we know about Reactive Programming and its helper framework. The question is how that solve problems associated with mobile platform that I mentioned at the start of this post?
+
+Instead of giving long explanations of my own, I’d rather direct you to this awesome [talk by Jake Wharton](https://www.youtube.com/watch?v=0IKHxjkgop4&t=2179s) where he discusses these problems in context of Android and their solution with use of RxJava.
+
+The crux is basically don’t hate yourself, go async and let the world handle their own problems instead of making your code rely on outside changes in proactive fashion.
+
+## Conclusion
+
+State management is hard, especially on mobile platforms. While ideally SDKs should themself be reactively designed, we shouldn’t let that be a source of unreliability in our applications. Thanks to RX movement, we have reactive extensions port for almost every well known language. In context of Android specifically, the rise of Kotlin has provided a great opportunity to finally start writing our applications in functional and reactive manner.
+
+---
+
+Image Source - [ReactiveX](http://reactivex.io/){:target="_blank"}.<br />
+For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad){:target="_blank"}.
