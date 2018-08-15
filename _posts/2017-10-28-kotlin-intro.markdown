@@ -58,7 +58,7 @@ In Kotlin, the syntax is different for references that can hold `null` and those
 
 {% highlight kotlin %}
 var a: String = "abc"
-a = null    // This leads to compile time error
+a = null    // This leads to compile time error 
 {% endhighlight %}
 
 The syntax to allow `null`s is to add a trailing question mark after the type declaration e.g. `String?`:

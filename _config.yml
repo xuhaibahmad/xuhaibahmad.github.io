@@ -17,9 +17,23 @@ permalink: /:title/
 
 gist:
    noscript: false
+
+# Conversion
+markdown:    kramdown
+highlighter: rouge
+lsi:         false
+excerpt_separator: "\n\n"
+incremental: false
+
 kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+  auto_ids:      true
+  entity_output: as_char
+  toc_levels:    1..6
+  smart_quotes:  lsquo,rsquo,ldquo,rdquo
+  input:         GFM
+  hard_wrap:     false
+  footnote_nr:   1
+  show_warnings: false
 
 # To enable google analytics, supply your token below
 analytics-google: 'UA-74111243-1'
