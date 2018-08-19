@@ -11,7 +11,7 @@ tag:
 image: /assets/images/portfolio/icons/cp_icon.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "A movie review app powered by The New York Times Move Review API."
 jemoji: '<img class="emoji" title="cinema-probe" alt="cinema-probe" src="/assets/images/portfolio/icons/cp_icon.png" height="20" width="20" align="absmiddle">'
 author: johndoe

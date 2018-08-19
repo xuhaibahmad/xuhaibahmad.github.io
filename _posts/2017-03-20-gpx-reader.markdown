@@ -11,7 +11,7 @@ tag:
 image: /assets/images/portfolio/icons/default.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "GPX Reader that parses GPX format files and draws the path on the Map."
 jemoji: '<img class="emoji" title="gpx_reader" alt="gpx_reader" src="/assets/images/portfolio/icons/default.png" height="20" width="20" align="absmiddle">'
 author: johndoe

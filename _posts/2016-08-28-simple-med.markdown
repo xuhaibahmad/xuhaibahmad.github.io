@@ -12,7 +12,7 @@ tag:
 image: /assets/images/portfolio/icons/simple_med.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "Pharmacy App"
 jemoji: '<img class="emoji" title="simple_med" alt="simple_med" src="/assets/images/portfolio/icons/simple_med.png" height="20" width="20" align="absmiddle">'
 author: johndoe

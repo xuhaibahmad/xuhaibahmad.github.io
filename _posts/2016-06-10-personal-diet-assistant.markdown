@@ -13,7 +13,7 @@ tag:
 image: /assets/images/portfolio/icons/pda.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "Personal Diet Assistant."
 jemoji: '<img class="emoji" title="pda" alt="pda" src="/assets/images/portfolio/icons/pda.png" height="20" width="20" align="absmiddle">'
 author: johndoe

@@ -9,7 +9,7 @@ tag:
 image: /assets/images/portfolio/icons/default.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "Incomplete term project."
 jemoji: '<img class="emoji" title="seven_stones" alt="seven_stones" src="/assets/images/portfolio/icons/default.png" height="20" width="20" align="absmiddle">'
 author: johndoe

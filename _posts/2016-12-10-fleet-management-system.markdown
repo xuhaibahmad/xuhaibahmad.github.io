@@ -12,7 +12,7 @@ tag:
 image: /assets/images/portfolio/icons/fms.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "Fleet Management System."
 jemoji: '<img class="emoji" title="fms" alt="fms" src="/assets/images/portfolio/icons/fms.png" height="20" width="20" align="absmiddle">'
 author: johndoe

@@ -11,7 +11,7 @@ tag:
 image: /assets/images/portfolio/icons/memify.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "Create Memes On The Fly."
 jemoji: '<img class="emoji" title="memify" alt="memify" src="/assets/images/portfolio/icons/memify.png" height="20" width="20" align="absmiddle">'
 author: johndoe

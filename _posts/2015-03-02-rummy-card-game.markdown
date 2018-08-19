@@ -9,7 +9,7 @@ tag:
 image: /assets/images/portfolio/icons/default.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "Rummy card game project done in initial days of freelancing at Upwork."
 jemoji: '<img class="emoji" title="rummy" alt="rummy" src="/assets/images/portfolio/icons/default.png" height="20" width="20" align="absmiddle">'
 author: johndoe

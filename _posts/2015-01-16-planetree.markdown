@@ -10,7 +10,7 @@ tag:
 image: /assets/images/portfolio/icons/planetree.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "OpenCV based Tree Identification and Age Determination."
 jemoji: '<img class="emoji" title="planetree" alt="planetree" src="/assets/images/portfolio/icons/planetree.png" height="20" width="20" align="absmiddle">'
 author: johndoe

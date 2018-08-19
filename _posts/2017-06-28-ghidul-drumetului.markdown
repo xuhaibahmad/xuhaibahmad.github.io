@@ -12,7 +12,7 @@ tag:
 image: /assets/images/portfolio/icons/ghidul.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "Wayfarer Guide"
 jemoji: '<img class="emoji" title="ghidul" alt="ghidul" src="/assets/images/portfolio/icons/ghidul.png" height="20" width="20" align="absmiddle">'
 author: johndoe

@@ -13,7 +13,7 @@ tag:
 image: /assets/images/portfolio/icons/driver.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "Driver Logistics App"
 jemoji: '<img class="emoji" title="driver" alt="driver" src="/assets/images/portfolio/icons/driver.png" height="20" width="20" align="absmiddle">'
 author: johndoe

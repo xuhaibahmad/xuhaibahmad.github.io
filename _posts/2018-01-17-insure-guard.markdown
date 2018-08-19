@@ -10,7 +10,7 @@ tag:
 image: /assets/images/portfolio/icons/insure_guard.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "Insure guard"
 jemoji: '<img class="emoji" title="insure_guard" alt="insure_guard" src="/assets/images/portfolio/icons/insure_guard.png" height="20" width="20" align="absmiddle">'
 author: johndoe

@@ -11,7 +11,7 @@ tag:
 image: /assets/images/portfolio/icons/cricketer.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "Scoring and Statistics for Cricket."
 jemoji: '<img class="emoji" title="cricketer" alt="cricketer" src="/assets/images/portfolio/icons/cricketer.png" height="20" width="20" align="absmiddle">'
 author: johndoe

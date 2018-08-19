@@ -13,7 +13,7 @@ tag:
 image: /assets/images/portfolio/icons/kyc.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "Know Your Cat."
 jemoji: '<img class="emoji" title="kyc" alt="kyc" src="/assets/images/portfolio/icons/kyc.png" height="20" width="20" align="absmiddle">'
 author: johndoe

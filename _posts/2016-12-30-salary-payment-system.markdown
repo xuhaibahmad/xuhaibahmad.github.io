@@ -10,7 +10,7 @@ tag:
 image: /assets/images/portfolio/icons/default.png
 headerImage: true
 projects: true
-hidden: true # don't count this post in blog pagination
+hidden: false
 description: "Salaray Payment System using the Mobie Wallet app build in previous contract."
 jemoji: '<img class="emoji" title="sps" alt="sps" src="/assets/images/portfolio/icons/default.png" height="20" width="20" align="absmiddle">'
 author: johndoe
