@@ -9,7 +9,7 @@ tag:
 image: /assets/images/portfolio/icons/roayah.png
 headerImage: true
 projects: true
-hidden: true
+hidden: false
 description: "Roayah"
 jemoji: '<img class="emoji" title="roayah" alt="roayah" src="/assets/images/portfolio/icons/roayah.png" height="20" width="20" align="absmiddle">'
 author: johndoe
@@ -20,9 +20,9 @@ externalLink: false
 ![Screenshot](/assets/images/portfolio/roayah.png)
 {: refdef}
 
-[TODO]()
+Roayah News is an arabic news website that provides latest news and analysis. The Roayah News application seeks to bring insights from all around the world in your hands. Wherever you are, whatever your thoughts and interests, whether in the field of politics or economics, culture or cinema, the history of the country and the cultures of its people, all this is more closely monitored and presented to you.
 
 ---
 
-You can find the app on [Play Store](https://play.google.com/store/apps/details?id=com.zuhaibahmad.insureproof).<br />
+You can find the app from [Roayah News Wesbite](http://www.roayahnews.com/).<br/>
 For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad).
