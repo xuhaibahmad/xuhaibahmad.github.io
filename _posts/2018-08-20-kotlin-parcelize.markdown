@@ -67,13 +67,13 @@ public class MyObject implements Parcelable {
  }
 {% endhighlight %}
 
-We have been using this for years now, but if you have using something like [Parceler](https://github.com/johncarl81/parceler) or if you are used to minimal Kotlin code now, then your reaction would probably be something like:
+We have been using this for years now, but if you have been using something like [Parceler](https://github.com/johncarl81/parceler) or if you are used to minimal Kotlin code now, then your reaction would probably be something like:
 
 ![Gross!](https://media.giphy.com/media/pVAMI8QYM42n6/giphy.gif#center)
 
 ## Kotlin To The Rescue (Again?!)
 
-The release of Kotlin 1.1.4 added experimental support for generating Android Parcelable implementations using the `@Parcelize` annotation. It brings back the simplicity of `Serializable` but without reflect. It instead uses annotation processing to acheive that.
+The release of Kotlin 1.1.4 added experimental support for generating Android Parcelable implementations using the `@Parcelize` annotation. It brings back the simplicity of `Serializable` but without reflection. It instead uses annotation processing to acheive that.
 
 ### Setup
 
@@ -89,7 +89,7 @@ Also, add `apply plugin: ‘kotlin-android-extensions’` to your gradle file if
 
 ### Usage
 
-The process of making any field parcelable involves adding only two things - a `@Parcelize` annotation and marking the class with `Parcelable` implementation.
+The process of making any class parcelable involves adding only two things - a `@Parcelize` annotation and marking the class with `Parcelable` implementation.
 
 Here's what our `MyObject` class would look like:
 
