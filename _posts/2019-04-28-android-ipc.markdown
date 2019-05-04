@@ -8,6 +8,7 @@ tag:
     - Kotlin
     - Android
     - IPC
+category: Blog
 blog: true
 draft: false
 star: true

@@ -10,6 +10,7 @@ tag:
 - Testing
 - Robolectric
 - ActiveAndroid
+category: Blog
 blog: true
 draft: false
 star: true

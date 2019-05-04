@@ -9,6 +9,7 @@ tag:
 - Java
 - Android
 - Productivity
+category: Blog
 blog: true
 draft: false
 star: true

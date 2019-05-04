@@ -9,6 +9,7 @@ tag:
 - GitHub Pages
 - Jekyll
 - Blog
+category: Blog
 blog: true
 draft: false
 star: true

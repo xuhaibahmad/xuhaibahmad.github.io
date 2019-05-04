@@ -9,6 +9,7 @@ tag:
 - Java
 - MVP
 - Architecture
+category: Blog
 blog: true
 draft: false
 star: true

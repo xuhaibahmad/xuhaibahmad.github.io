@@ -5,8 +5,9 @@ date: 2018-08-20 12:25
 image: /assets/images/posts/parcelize.png
 headerImage: true
 tag:
-- Kotlin
-- Android
+    - Kotlin
+    - Android
+category: Blog
 blog: true
 draft: false
 star: true

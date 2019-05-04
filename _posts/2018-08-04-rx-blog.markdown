@@ -10,6 +10,7 @@ tag:
 - Java
 - Android
 - Mobile
+category: Blog
 blog: true
 draft: false
 star: true

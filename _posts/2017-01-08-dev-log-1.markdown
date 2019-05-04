@@ -10,6 +10,7 @@ tag:
 - Scheduler
 - Windows
 - Productivity
+category: Blog
 blog: true
 draft: false
 star: true

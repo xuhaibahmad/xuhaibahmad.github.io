@@ -5,8 +5,9 @@ date: 2018-12-1 16:00
 image: /assets/images/posts/import.png
 headerImage: true
 tag:
-- Kotlin
-- Android
+    - Kotlin
+    - Android
+category: Blog
 blog: true
 draft: false
 star: true
