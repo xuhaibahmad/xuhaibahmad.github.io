@@ -13,7 +13,7 @@ tag:
 image: /assets/images/portfolio/icons/sed.png
 headerImage: true
 projects: true
-hidden: false
+hidden: true
 description: "Simple English Dictionary."
 jemoji: '<img class="emoji" title="sed" alt="sed" src="/assets/images/portfolio/icons/sed.png" height="20" width="20" align="absmiddle">'
 author: johndoe

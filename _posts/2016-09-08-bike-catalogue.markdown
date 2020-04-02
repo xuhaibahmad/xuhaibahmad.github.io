@@ -11,7 +11,7 @@ tag:
 image: /assets/images/portfolio/icons/default.png
 headerImage: true
 projects: true
-hidden: false
+hidden: true
 description: "Image Feed App dedicated to Sport Bikes."
 jemoji: '<img class="emoji" title="bike" alt="bike" src="/assets/images/portfolio/icons/default.png" height="20" width="20" align="absmiddle">'
 author: johndoe

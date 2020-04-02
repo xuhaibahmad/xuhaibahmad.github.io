@@ -8,7 +8,7 @@ tag:
 image: /assets/images/portfolio/icons/default.png
 headerImage: true
 projects: true
-hidden: false
+hidden: true
 description: "Audio Flashcard application."
 jemoji: '<img class="emoji" title="audio_flashcard" alt="audio_flashcard" src="/assets/images/portfolio/icons/default.png" height="20" width="20" align="absmiddle">'
 author: johndoe

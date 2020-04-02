@@ -11,7 +11,7 @@ tag:
 image: /assets/images/portfolio/icons/exam_robot.png
 headerImage: true
 projects: true
-hidden: false
+hidden: true
 description: "Exam Robot"
 jemoji: '<img class="emoji" title="exam_robot" alt="exam_robot" src="/assets/images/portfolio/icons/exam_robot.png" height="20" width="20" align="absmiddle">'
 author: johndoe

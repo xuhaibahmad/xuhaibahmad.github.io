@@ -3,7 +3,7 @@ title: "Android Tutorials with Eclipse | Privacy Policy"
 layout: page
 date: 2016-08-21 21:45
 projects: false
-hidden: false
+hidden: true
 description: "Android Tutorials with Eclipse | Privacy Policy"
 author: johndoe
 externalLink: false
