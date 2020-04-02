@@ -20,9 +20,9 @@ externalLink: false
 ![Screenshot](/assets/images/portfolio/raffle_hunter.png)
 {: refdef}
 
-Raffle Hunter is a powerful marketing tool that let's you create raffle events without the hassle. It only takes 5 minutes to set up a raffle. The great news is, it’s even easier for your customers to participate. Just a scan of a QR code and voila—they’re in.
+Raffle Hunter is a marketing tool that makes it easy for customers to find and engage with businesses through raffle events. The app lets businesses set up raffles for events such as Tradeshows, conferences, other industry events, while customers can participate with just a scan of a QR code.
 
-Tradeshows, conferences, industry events. Wherever your business is, Raffle Hunter makes it easy for customers to find and engage with your business through fun raffles.
+I joined the project as sole Android Engineer midway through the development and worked on it for few months leading to beta release.
 
 ---
 
