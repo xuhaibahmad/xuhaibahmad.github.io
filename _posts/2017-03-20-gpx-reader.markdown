@@ -3,11 +3,11 @@ title: "GPX Reader"
 layout: post
 date: 2017-03-20 19:57
 tag:
-- Android
-- Java
-- GPX
-- Google Maps
-- RxJava
+    - Android
+    - Java
+    - GPX
+    - Google Maps
+    - RxJava
 image: /assets/images/portfolio/icons/default.png
 headerImage: true
 projects: true
@@ -22,9 +22,9 @@ externalLink: false
 ![Screenshot](/assets/images/portfolio/gpx.png)
 {: refdef}
 
-A GPX Reader application that parses supplied [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format){:target="_blank"} files and displays the parsed route that was recorded on the file into Google Map. The user's position is also tracked all the time for route tracking.
+A GPX Reader application that parses supplied [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format){:target="\_blank"} files and displays the parsed route that was recorded on the file into Google Map. The user's position is also tracked all the time for route tracking.
 
 ---
 
-Project Reference available at [Freelancer](https://www.freelancer.com/jobs/project-13443880/){:target="_blank"}.<br />
-For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad){:target="_blank"}.
+Project Reference available at [Freelancer](https://www.freelancer.com/jobs/project-13443880/){:target="\_blank"}.<br />
+For suggestions and queries, just [contact me](http://linkedin.com/in/xuhaibahmad){:target="\_blank"}.

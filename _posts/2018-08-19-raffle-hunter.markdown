@@ -3,9 +3,9 @@ title: "Raffle Hunter"
 layout: post
 date: 2018-08-19 11:24
 tag:
-- Android
-- Kotlin
-- Firebase
+    - Android
+    - Kotlin
+    - Firebase
 image: /assets/images/portfolio/icons/raffle_hunter.png
 headerImage: true
 projects: true
