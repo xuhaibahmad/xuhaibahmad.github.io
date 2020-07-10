@@ -10,7 +10,7 @@ headerImage: true
 projects: true
 hidden: false
 description: "A flutter showcase app powered by OMDB API"
-jemoji: '<img class="emoji" title="sparkpoint" alt="Flutter Movies" src="/assets/images/portfolio/icons/flutter_movies.png" height="20" width="20" align="absmiddle">'
+jemoji: '<img class="emoji" title="flutter-movies" alt="Flutter Movies" src="/assets/images/portfolio/icons/flutter_movies.png" height="20" width="20" align="absmiddle">'
 author: johndoe
 externalLink: false
 ---

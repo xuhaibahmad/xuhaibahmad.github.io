@@ -5,12 +5,12 @@ date: 2020-06-02 11:24
 tag:
     - Android
     - Flutter
-image: /assets/images/portfolio/icons/default.png
+image: /assets/images/portfolio/icons/flutter_weather.png
 headerImage: true
 projects: true
 hidden: false
 description: "A minimalist weather app built as part of a portfolio item"
-jemoji: '<img class="emoji" title="flutter-weather" alt="flutter-weather" src="/assets/images/portfolio/icons/default.png" height="20" width="20" align="absmiddle">'
+jemoji: '<img class="emoji" title="flutter-weather" alt="Flutter Weather" src="/assets/images/portfolio/icons/flutter_weather.png" height="20" width="20" align="absmiddle">'
 author: johndoe
 externalLink: false
 ---
