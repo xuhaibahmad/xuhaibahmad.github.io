@@ -1,0 +1,29 @@
+---
+title: "FlixView"
+layout: post
+date: 2020-08-01 15:06
+tag: 
+- Android
+- Kotlin
+- AndroidTV
+- DPad
+image: /assets/images/portfolio/icons/smart-tv.png
+headerImage: true
+projects: true
+hidden: false
+description: "View to create Netflix-style catalogs for Android TV."
+jemoji: '<img class="emoji" title="cricketer" alt="cricketer" src="/assets/images/portfolio/icons/smart-tv.png" height="20" width="20" align="absmiddle">'
+author: johndoe
+externalLink: false
+---
+
+{:refdef: style="text-align: center;"}
+![Screenshot](/assets/images/portfolio/flix-view.png)
+{: refdef}
+
+The Leanback library is quite limited when it comes to building Netflix-style catalog, specially the fixed pointer navigation for Android TV. FlixView attempts to overcome the complexity by mixing RecyclerView with Leanback's VerticalGridView to build similar experience.
+
+---
+
+You can find the library on [Github](https://github.com/xuhaibahmad/FlixView).<br/>
+For suggestions and queries, feel free to [contact me](http://linkedin.com/in/xuhaibahmad).
