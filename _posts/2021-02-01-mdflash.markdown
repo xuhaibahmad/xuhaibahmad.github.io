@@ -1,0 +1,36 @@
+---
+title: "MDFlash"
+layout: post
+date: 2021-02-01 15:06
+tag: 
+- Flutter
+- Dart
+- Android
+- iOS
+- Python
+- Kivy
+- Flask
+- REST
+- NLP
+image: /assets/images/portfolio/icons/mdflash.png
+headerImage: true
+projects: true
+hidden: false
+description: "A product to easily convert your notes into flashcards and quizzes.."
+jemoji: '<img class="emoji" title="cricketer" alt="cricketer" src="/assets/images/portfolio/icons/mdflash.png" height="20" width="20" align="absmiddle">'
+author: johndoe
+externalLink: false
+---
+
+{:refdef: style="text-align: center;"}
+![Screenshot](/assets/images/portfolio/mdflash.png)
+{: refdef}
+
+**MDFlash** is a tool that I built for personal use while preparing for an exam. The goal is to automatically extract important terms out of digital notes (currently only markdown files) and create flashcards and quizzes from them to help with information retention.
+
+The project was initially built with **Python**'s **Kivy** framework due to its reliance of **NLP** libraries. Though later I migrated the business logic to a **Flask** API, making it platform agnostic. I plan on releasing the Kivy version for desktop, however, I opted **Flutter** for the mobile version. The project is in very early stages, but I plan on expanding it to become a useful toolkit for study.
+
+---
+
+You can join the beta program on [Play Store](https://play.google.com/store/apps/details?id=com.zuhaibahmad.mdflash).<br/>
+For suggestions and queries, feel free to [contact me](http://linkedin.com/in/xuhaibahmad).
