@@ -265,6 +265,20 @@
     </a>
     {% endif %}
 
+    <!-- Goodreads -->
+    {% if site.goodreads %}
+    <a
+        class="link"
+        data-title="goodreads.com/{{ site.goodreads }}"
+        href="https://www.goodreads.com/{{ site.goodreads }}"
+        target="_blank"
+    >
+        <svg class="icon icon-goodreads">
+            <use xlink:href="#icon-goodreads"></use>
+        </svg>
+    </a>
+    {% endif %}
+
     <!-- EMail -->
     {% if site.email %}
     <a
