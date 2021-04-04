@@ -10,7 +10,7 @@ tag:
     - Personal
 category: Blog
 blog: true
-draft: false
+draft: true
 star: true
 author: johndoe
 description: A personal view of the past decade 2010-2019
