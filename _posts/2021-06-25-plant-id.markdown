@@ -2,11 +2,11 @@
 title: "Plant ID"
 layout: post
 date: 2021-06-25 15:06
-tag: 
-- Python
-- Kivy
-- Android
-- iOS
+tag:
+    - Python
+    - Kivy
+    - Android
+    - iOS
 image: /assets/images/portfolio/icons/default.png
 headerImage: true
 projects: true
@@ -18,7 +18,7 @@ externalLink: false
 ---
 
 {:refdef: style="text-align: center;"}
-![Plant ID](/assets/images/portfolio/kivy-plant-id.jpg)
+![Plant ID](/assets/images/portfolio/kivy-plant-id.jpeg)
 {: refdef}
 
 A Kivy cross-platform app for heuristics based plant identification. The use case for the client was to be able to identify a plant by answering a series of questions. The application uses simple heuristics to filter relevant results until none or most probable choices are left.
@@ -28,6 +28,6 @@ A Kivy cross-platform app for heuristics based plant identification. The use cas
 {:refdef: style="text-align: center;"}
 
 <p align="center">
-<img src="/assets/images/portfolio/plant-id-demo.gif" width="250px">
+<img src="/assets/images/portfolio/plant-id-demo.gif">
 </p>
 {: refdef}
